@@ -9,6 +9,7 @@ TagManager:
   - JumpItem
   - Ground
   - RunItem
+  - ToolCamera
   layers:
   - Default
   - TransparentFX
