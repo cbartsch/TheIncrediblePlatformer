@@ -38,12 +38,14 @@ public class Player : MonoBehaviour
 
     private bool didWalk = false;
     private bool flipped = false;
-    private bool groundContact = false;
+    private int numGroundContacts = 0;
     private bool crouching = false;
     private bool willJump = false;
     private bool running = false;
     private bool spawning = false;
     private bool despawning = false;
+
+    private bool GroundContact { get { return numGroundContacts > 0; } }
 
     private Vector3 startScale;
 
@@ -82,7 +84,7 @@ public class Player : MonoBehaviour
             {
                 c.a = 0;
                 despawning = false;
-                if(Removed != null)
+                if (Removed != null)
                 {
                     Removed(this, new EventArgs());
                 }
@@ -95,30 +97,31 @@ public class Player : MonoBehaviour
         animator.runtimeAnimatorController = typeAnims[PlayerData.type];
 
         //can't jump while running or in the air
-        if (willJump && groundContact && !running)
+        if (willJump && GroundContact && !running)
         {
             DoJump();
         }
-        else if (groundContact)
+        else if (GroundContact)
         {
             Walk();
         }
 
-        body.drag = groundContact ? drag : 0;
+        body.drag = GroundContact ? drag : 0;
 
         flipped = false;
 
         animator.SetBool("Crouching", crouching);
-        animator.SetBool("Grounded", groundContact);
+        animator.SetBool("Grounded", GroundContact);
         animator.SetBool("Running", running);
         animator.SetFloat("YVel", body.velocity.y);
     }
 
     void Walk()
     {
-        bool moving = Mathf.Abs(body.velocity.x) > 0.01;
+        bool moving = (state == State.WalkRight && body.velocity.x > 0.01) ||
+            (state == State.WalkLeft && body.velocity.x < 0.01);
         didWalk = didWalk || moving;
-        if (!moving && groundContact && didWalk)
+        if (!moving && GroundContact && didWalk)
         {
             FlipWalkDirection();
         }
@@ -175,13 +178,14 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
         var collTag = coll.gameObject.tag;
-        if (collTag == "Player" && groundContact)
+        if (collTag == "Player" && GroundContact)
         {
             FlipWalkDirection();
         }
         if (collTag == "Ground")
         {
-            groundContact = true;
+            numGroundContacts++;
+            Debug.Log("enter ground contact with " + coll.gameObject.name + " #" + numGroundContacts);
         }
     }
 
@@ -190,7 +194,8 @@ public class Player : MonoBehaviour
         var collTag = coll.gameObject.tag;
         if (collTag == "Ground")
         {
-            groundContact = false;
+            numGroundContacts--;
+            Debug.Log("exit ground contact with " + coll.gameObject.name + " #" + numGroundContacts);
         }
     }
 

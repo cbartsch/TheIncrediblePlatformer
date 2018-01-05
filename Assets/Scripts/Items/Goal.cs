@@ -7,16 +7,15 @@ public class Goal : MonoBehaviour
     public int type = 0;
 
     public List<RuntimeAnimatorController> typeAnims;
-
-    // Use this for initialization
+    
     void Start()
     {
 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        //set animation type/color dependent on goal type
         GetComponentInChildren<Animator>().runtimeAnimatorController = typeAnims[type];
     }
 

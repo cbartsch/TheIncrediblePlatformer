@@ -12,14 +12,11 @@ public class Level : MonoBehaviour {
         );
     
     public List<Player.Data> playerData = new List<Player.Data> { new Player.Data { type = 0 } };
-
-    // Use this for initialization
+    
     void Start () {
-
         LevelDecorator.Instance.Decorate(this);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
