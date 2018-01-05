@@ -11,7 +11,14 @@ public class Player : MonoBehaviour
         public int type;
     }
 
-    public List<RuntimeAnimatorController> typeAnims;
+    [Serializable]
+    public class VisualData
+    {
+        public RuntimeAnimatorController animator;
+        public Sprite startSprite;
+    }
+
+    public List<VisualData> typeVisuals;
 
     public Animator animator;
     public SpriteRenderer spriteRenderer;
@@ -56,6 +63,7 @@ public class Player : MonoBehaviour
         var c = spriteRenderer.color;
         c.a = 0;
         spriteRenderer.color = c;
+        spriteRenderer.sprite = typeVisuals[PlayerData.type].startSprite;
     }
 
     void Update()
@@ -94,7 +102,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        animator.runtimeAnimatorController = typeAnims[PlayerData.type];
+        animator.runtimeAnimatorController = typeVisuals[PlayerData.type].animator;
 
         //can't jump while running or in the air
         if (willJump && GroundContact && !running)
@@ -119,7 +127,7 @@ public class Player : MonoBehaviour
     void Walk()
     {
         bool moving = (state == State.WalkRight && body.velocity.x > 0.01) ||
-            (state == State.WalkLeft && body.velocity.x < 0.01);
+            (state == State.WalkLeft && body.velocity.x < -0.01);
         didWalk = didWalk || moving;
         if (!moving && GroundContact && didWalk)
         {

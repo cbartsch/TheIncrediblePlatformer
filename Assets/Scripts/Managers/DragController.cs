@@ -50,13 +50,8 @@ public class DragController : MonoBehaviour
 
     private Vector3 touchPivot;
 
-    private Vector3 Center {
-        get {
-            return Collider.bounds.center;
-        }
-    }
-
-    // Use this for initialization
+    private Vector3 Center { get { return Collider.bounds.center; } }
+    
     void Start()
     {
         //attach crosshair to make drag area visible
@@ -72,8 +67,7 @@ public class DragController : MonoBehaviour
         size.y /= transform.localScale.y;
         chSprite.size = size;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         var touchPosWorld = Dragging ? InputManager.TouchPosWorldForDrag : InputManager.TouchPosWorld;
@@ -83,6 +77,7 @@ public class DragController : MonoBehaviour
         touchPosWorld.z = DragBounds.center.z;
         if (!dragActive && InputManager.HasTouchDown && DragBounds.Contains(touchPosWorld))
         {
+            //not dragging but touch is active -> start dragging now
             Dragging = true;
             dragActive = true;
 
@@ -91,11 +86,13 @@ public class DragController : MonoBehaviour
         }
         if (Dragging && !InputManager.HasTouch)
         {
+            //dragging but no touch active anymore -> stop dragging now
             Dragging = false;
             dragActive = false;
         }
         if (Dragging)
         {
+            //currently dragging -> move position with drag
             transform.position = touchPosWorld + touchPivot;
         }
     }

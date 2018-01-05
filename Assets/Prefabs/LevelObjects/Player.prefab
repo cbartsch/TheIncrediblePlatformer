@@ -162,9 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e1f5ec54ad5d34aa7f5dd3eda5e4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeAnims:
-  - {fileID: 9100000, guid: 5fb8d0c5c4a902047bac509dcf57262a, type: 2}
-  - {fileID: 9100000, guid: 6f43fe17438bafa489f08406d33de82c, type: 2}
+  typeVisuals:
+  - animator: {fileID: 9100000, guid: 5fb8d0c5c4a902047bac509dcf57262a, type: 2}
+    startSprite: {fileID: 21300008, guid: 0c649540d9369c24481c9b9e19232cf4, type: 3}
+  - animator: {fileID: 9100000, guid: 6f43fe17438bafa489f08406d33de82c, type: 2}
+    startSprite: {fileID: 21300068, guid: 0c649540d9369c24481c9b9e19232cf4, type: 3}
   animator: {fileID: 95973670700035150}
   spriteRenderer: {fileID: 212067350151655050}
   body: {fileID: 50526747394103088}

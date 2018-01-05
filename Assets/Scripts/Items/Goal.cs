@@ -27,6 +27,8 @@ public class Goal : MonoBehaviour
         {
             //remove first to prevent calling the handler multiple times
             player.Removed -= Player_Removed;
+
+            //call GoalReached after player's remove animation has finished
             player.Removed += Player_Removed;
             player.Remove();
         }

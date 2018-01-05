@@ -10,7 +10,12 @@ public class Collectible : MonoBehaviour
     {
         set
         {
-            GetComponentInChildren<Renderer>().enabled = value;
+            foreach (var renderer in GetComponentsInChildren<Renderer>())
+            {
+                renderer.enabled = value;
+            }
+
+            GetComponentInChildren<DragController>().enabled = value;
             GetComponentInChildren<Collider2D>().enabled = value;
         }
     }

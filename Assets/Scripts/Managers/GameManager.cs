@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
 
     private Coroutine spawnRoutine;
 
+    //TODO
+    public int WorldNum { get { return 1; } }
+
+    public int LevelNum { get { return levelIndex + 1; } }
+
     void Awake()
     {
         Instance = this;
