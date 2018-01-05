@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 61514317155602690}
   - component: {fileID: 50493927158336458}
   - component: {fileID: 114190983982031430}
+  - component: {fileID: 114475258316540024}
   m_Layer: 0
   m_Name: MoveObstacle
   m_TagString: Untagged
@@ -263,7 +264,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -271,7 +272,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!61 &61514317155602690
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -280,11 +281,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 1825073588969758}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9b1a940ee0952c949b2283f37e8e163b, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10.5, y: 42}
+  m_Offset: {x: 10.5, y: 29.281826}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -295,7 +296,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21, y: 84}
+  m_Size: {x: 11, y: 58.563652}
   m_EdgeRadius: 0
 --- !u!114 &114190983982031430
 MonoBehaviour:
@@ -310,7 +311,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crosshairPrefab: {fileID: 1890345527224608, guid: 93fae1ce591d7ad49a8bd1ed2514ee32,
     type: 2}
-  dragSizeOffset: 0.025
+--- !u!114 &114475258316540024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1825073588969758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a314b562ffe6054b92a08fcc90cd478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usePhysics: 1
 --- !u!212 &212038281327706148
 SpriteRenderer:
   m_ObjectHideFlags: 1
