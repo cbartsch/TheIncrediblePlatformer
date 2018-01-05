@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
     public class Data
     {
         public int type;
-
-        public Color Color { get { return TypeColor(type); } }
     }
 
     public List<RuntimeAnimatorController> typeAnims;
@@ -29,28 +27,75 @@ public class Player : MonoBehaviour
     public float drag = 1;
     public float crouchTime = 0.1f;
     public float runDuration = 2;
+    public float spawnTime = 0.3f;
+
+    //called after despawn animation
+    public event EventHandler Removed;
 
     enum State { Idle, WalkRight, WalkLeft };
 
     private State state = State.WalkRight;
+
     private bool didWalk = false;
     private bool flipped = false;
     private bool groundContact = false;
     private bool crouching = false;
     private bool willJump = false;
     private bool running = false;
+    private bool spawning = false;
+    private bool despawning = false;
 
     private Vector3 startScale;
-    
+
     void Start()
     {
         startScale = transform.localScale;
+        spawning = true;
+        var c = spriteRenderer.color;
+        c.a = 0;
+        spriteRenderer.color = c;
     }
+
     void Update()
     {
+        var enabled = !spawning && !despawning;
+        animator.enabled = enabled;
+        body.bodyType = enabled ? RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
+
+        if (spawning)
+        {
+            Color c = spriteRenderer.color;
+            c.a += Time.deltaTime / spawnTime;
+            if (c.a >= 1)
+            {
+                c.a = 1;
+                spawning = false;
+            }
+            spriteRenderer.color = c;
+            return;
+        }
+        if (despawning)
+        {
+            Color c = spriteRenderer.color;
+            c.a -= Time.deltaTime / spawnTime;
+            if (c.a <= 0)
+            {
+                c.a = 0;
+                despawning = false;
+                if(Removed != null)
+                {
+                    Removed(this, new EventArgs());
+                }
+                Destroy(gameObject);
+            }
+            spriteRenderer.color = c;
+            return;
+        }
+
         animator.runtimeAnimatorController = typeAnims[PlayerData.type];
 
-        if (willJump && groundContact)
+        //can't jump while running or in the air
+        if (willJump && groundContact && !running)
         {
             DoJump();
         }
@@ -98,12 +143,8 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
-        //can't jump while running
-        if (!running)
-        {
-            crouching = true;
-            Invoke("JumpAfterCrouch", crouchTime);
-        }
+        crouching = true;
+        Invoke("JumpAfterCrouch", crouchTime);
     }
 
     private void JumpAfterCrouch()
@@ -134,12 +175,7 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
         var collTag = coll.gameObject.tag;
-
-        if (collTag == "KillZone")
-        {
-            Die();
-        }
-        if(collTag == "Player" && groundContact)
+        if (collTag == "Player" && groundContact)
         {
             FlipWalkDirection();
         }
@@ -161,6 +197,12 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         var collTag = other.tag;
+
+        if (collTag == "KillZone")
+        {
+            Remove();
+        }
+
         Collectible c;
         //collider might be sub-object of collectible item
         if ((c = other.GetComponentInParent<Collectible>()) != null)
@@ -201,17 +243,8 @@ public class Player : MonoBehaviour
         flipped = true;
     }
 
-    void Die()
+    public void Remove()
     {
-        Destroy(gameObject);
-    }
-
-    public static Color TypeColor(int type)
-    {
-        switch (type)
-        {
-            case 1: return Color.red;
-            default: return Color.white;
-        }
+        despawning = true;
     }
 }

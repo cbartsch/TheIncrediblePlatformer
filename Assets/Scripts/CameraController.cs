@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -51,5 +52,11 @@ public class CameraController : MonoBehaviour
 
         //apply position change gradually using lerp
         camera.transform.position = Vector3.Lerp(camera.transform.position, newPos, Time.deltaTime * 10);
+    }
+
+    public static bool IsInMainCamera(Vector3 position)
+    {
+        var camera = Utils.FindCameraAtWorldPos(position);
+        return camera && camera.tag == "MainCamera";
     }
 }

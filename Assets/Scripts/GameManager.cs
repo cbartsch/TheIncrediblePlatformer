@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     private int levelIndex = 0;
     private int activePlayers = 0;
 
+    private Coroutine spawnRoutine;
+
     void Awake()
     {
         Instance = this;
@@ -48,7 +50,8 @@ public class GameManager : MonoBehaviour
             Collectible.ResetAll(level);
             activePlayers = level.playerData.Count;
             spawningPlayers = true;
-            StartCoroutine(SpawnPlayers());
+
+            spawnRoutine = StartCoroutine(SpawnPlayers());
         }
     }
 
@@ -67,6 +70,8 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
         spawningPlayers = false;
+
+        spawnRoutine = null;
     }
 
     public void GoalReached()
@@ -101,9 +106,17 @@ public class GameManager : MonoBehaviour
 
     public void ResetPlayers()
     {
-        foreach(var player in level.GetComponentsInChildren<Player>())
+        if(spawnRoutine != null)
         {
-            Destroy(player.gameObject);
+            StopCoroutine(spawnRoutine);
+            spawningPlayers = false;
+        }
+
+        activePlayers = level.playerData.Count;
+
+        foreach (var player in level.GetComponentsInChildren<Player>())
+        {
+            player.Remove();
         }
     }
 }

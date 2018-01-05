@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class InputManager
+public static class InputManager
 {
     //amount of inches to drag object above finger on touch screens
     private const float TOUCH_DRAG_OFFSET = 40f / 160f;
@@ -28,7 +28,7 @@ public class InputManager
         }
     }
 
-    public static Vector3 TouchPosWorld { get { return ScreenPosToWorld(TouchPosScreen); } }
+    public static Vector3 TouchPosWorld { get { return Utils.ScreenPosToWorld(TouchPosScreen); } }
 
     public static Vector3 TouchPosWorldForDrag
     {
@@ -40,27 +40,7 @@ public class InputManager
                 //move up so the dragging object is visible above the finger on touch screens
                 touchPosScreen += Vector3.up * Screen.dpi * TOUCH_DRAG_OFFSET;
             }
-            return ScreenPosToWorld(touchPosScreen);
+            return Utils.ScreenPosToWorld(touchPosScreen);
         }
-    }
-
-    public static Vector3 ScreenPosToWorld(Vector3 screenPos)
-    {
-        Camera camera = findCamera(screenPos);
-        return HasTouch && camera ? camera.ScreenToWorldPoint(screenPos) : default(Vector3);
-    }
-
-    //find camera displaying at screen pixel position
-    public static Camera findCamera(Vector2 pixelPos)
-    {
-        foreach (var camera in Camera.allCameras)
-        {
-            var relativePos = camera.ScreenToViewportPoint(pixelPos);
-            if (new Rect(0, 0, 1, 1).Contains(relativePos))
-            {
-                return camera;
-            }
-        }
-        return null;
     }
 }

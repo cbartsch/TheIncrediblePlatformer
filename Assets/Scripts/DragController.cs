@@ -5,12 +5,13 @@ using UnityEngine.Networking;
 
 public class DragController : MonoBehaviour
 {
+    //offset of drag area from collider bounds, in game units
+    private const float DRAG_SIZE_OFFSET = 1.5f;
+
     //static - only allow 1 drag at a time globally
     private static bool dragActive = false;
 
     public GameObject crosshairPrefab;
-
-    public float dragSizeOffset = 4f / 160f;
 
     private GameObject crosshair;
     
@@ -42,16 +43,18 @@ public class DragController : MonoBehaviour
         get
         {
             var bounds = Collider.bounds;
-            //scale offset from inches to game units
-            var offset = dragSizeOffset * Screen.dpi / Screen.width * CameraController.SCREEN_HEIGHT / transform.lossyScale.x;
-            bounds.size += new Vector3(offset, offset);
+            bounds.size += new Vector3(DRAG_SIZE_OFFSET, DRAG_SIZE_OFFSET);
             return bounds;
         }
     }
 
     private Vector3 touchPivot;
 
-    private Vector3 Center { get { return transform.position + Collider.bounds.size / 2; } }
+    private Vector3 Center {
+        get {
+            return Collider.bounds.center;
+        }
+    }
 
     // Use this for initialization
     void Start()
