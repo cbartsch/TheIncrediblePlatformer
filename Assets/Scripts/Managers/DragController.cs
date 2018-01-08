@@ -5,52 +5,25 @@ using UnityEngine.Networking;
 
 public class DragController : MonoBehaviour
 {
-    //offset of drag area from collider bounds, in game units
-    private const float DRAG_SIZE_OFFSET = 1.5f;
-
     //static - only allow 1 drag at a time globally
-    private static bool dragActive = false;
+    public static bool DragActive { get; private set; }
 
     public GameObject crosshairPrefab;
 
     private GameObject crosshair;
-    
-    private Collider2D Collider
-    {
-        get { return GetComponentInChildren<Collider2D>(); }
-    }
 
-    private bool _dragging;
-    private bool Dragging
-    {
-        get { return _dragging; }
-        set
-        {
-            if (value != _dragging)
-            {
-                Time.timeScale = value ? 0 : 1;
-                if (!value)
-                {
-                    GameManager.Instance.ResetPlayers();
-                }
-            }
-            _dragging = value;
-        }
-    }
+    public Collider2D moveAreaCollider;
+
+    private bool Dragging { get; set; }
 
     private Bounds DragBounds
     {
-        get
-        {
-            var bounds = Collider.bounds;
-            bounds.size += new Vector3(DRAG_SIZE_OFFSET, DRAG_SIZE_OFFSET);
-            return bounds;
-        }
+        get { return moveAreaCollider.bounds; }
     }
 
     private Vector3 touchPivot;
 
-    private Vector3 Center { get { return Collider.bounds.center; } }
+    private Vector3 Center { get { return moveAreaCollider.bounds.center; } }
     
     void Start()
     {
@@ -67,6 +40,15 @@ public class DragController : MonoBehaviour
         size.y /= transform.localScale.y;
         chSprite.size = size;
     }
+
+    private bool IsDragTarget
+    {
+        get
+        {
+            var result = Physics2D.OverlapPoint(InputManager.TouchPosWorld, -1, -10, 10);
+            return result && result.gameObject.transform.IsChildOf(gameObject.transform);
+        }
+    }
     
     void Update()
     {
@@ -75,11 +57,11 @@ public class DragController : MonoBehaviour
         crosshair.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, Dragging ? 1 : 0.2f);
 
         touchPosWorld.z = DragBounds.center.z;
-        if (!dragActive && InputManager.HasTouchDown && DragBounds.Contains(touchPosWorld))
+        if (!DragActive && InputManager.HasTouchDown && IsDragTarget)
         {
             //not dragging but touch is active -> start dragging now
             Dragging = true;
-            dragActive = true;
+            DragActive = true;
 
             //on touch screen, move center; with mouse, move exact click piont
             touchPivot = transform.position - (InputManager.HasTouchScreenTouch ? Center : touchPosWorld);
@@ -88,7 +70,7 @@ public class DragController : MonoBehaviour
         {
             //dragging but no touch active anymore -> stop dragging now
             Dragging = false;
-            dragActive = false;
+            DragActive = false;
         }
         if (Dragging)
         {

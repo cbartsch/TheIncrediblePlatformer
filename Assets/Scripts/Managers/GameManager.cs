@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerPrefab;
 
-    public List<GameObject> levels;
+    public GameObject levelContainer;
 
     public float respawnTime = 1;
     public float spawnInterval = 1;
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     private bool spawningPlayers = false;
     private int levelIndex = 0;
+    private int worldIndex = 0;
     private int activePlayers = 0;
 
     private Coroutine spawnRoutine;
@@ -30,6 +31,11 @@ public class GameManager : MonoBehaviour
     public int WorldNum { get { return 1; } }
 
     public int LevelNum { get { return levelIndex + 1; } }
+
+    private int NumWorlds { get { return levelContainer.transform.childCount; } }
+    private int NumLevelsInWorld { get { return levelContainer.transform.GetChild(worldIndex).childCount; } }
+
+    public bool Paused { get; set; }
 
     void Awake()
     {
@@ -45,11 +51,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var isPaused = Paused || DragController.DragActive;
+        var players = FindObjectsOfType<Player>();
+        Time.timeScale = isPaused && players.Length == 0 ? 0 : 1;
+        if (isPaused)
+        {
+            ResetPlayers();
+        }
+
         if (!level)
         {
             CreateLevel();
         }
-        var players = FindObjectsOfType<Player>();
         if (players.Length == 0 && !spawningPlayers)
         {
             Collectible.ResetAll(level);
@@ -94,12 +107,24 @@ public class GameManager : MonoBehaviour
     private void LevelFinished()
     {
         ResetLevel();
-        levelIndex = (levelIndex + 1) % levels.Count;
+        levelIndex++;
+        if (levelIndex >= NumLevelsInWorld)
+        {
+            levelIndex = 0;
+            worldIndex++;
+        }
+
+        if (worldIndex >= NumWorlds)
+        {
+            worldIndex = 0;
+        }
     }
 
     private void CreateLevel()
     {
-        level = Instantiate(levels[levelIndex]).GetComponent<Level>();
+        var world = levelContainer.transform.GetChild(worldIndex);
+        var levelTemplate = world.transform.GetChild(levelIndex);
+        level = Instantiate(levelTemplate.gameObject).GetComponent<Level>();
         level.gameObject.SetActive(true);
     }
 
@@ -107,6 +132,11 @@ public class GameManager : MonoBehaviour
     {
         Destroy(level.gameObject);
         level = null;
+    }
+
+    public void TogglePause()
+    {
+        Paused = !Paused;
     }
 
     public void ResetPlayers()
