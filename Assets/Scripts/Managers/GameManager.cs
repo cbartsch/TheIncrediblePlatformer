@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private int levelIndex = 0;
     private int worldIndex = 0;
     private int activePlayers = 0;
+    private DateTime levelStartTime;
 
     private Coroutine spawnRoutine;
 
@@ -42,13 +43,11 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    // Use this for initialization
     void Start()
     {
         level = FindObjectOfType<Level>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         var isPaused = Paused || DragController.DragActive;
@@ -106,6 +105,9 @@ public class GameManager : MonoBehaviour
 
     private void LevelFinished()
     {
+        var timeDiff = DateTime.Now - levelStartTime;
+        GameAnalytics.Instance.LevelFinished(WorldNum, LevelNum, timeDiff);
+
         ResetLevel();
         levelIndex++;
         if (levelIndex >= NumLevelsInWorld)
@@ -122,10 +124,11 @@ public class GameManager : MonoBehaviour
 
     private void CreateLevel()
     {
-        var world = levelContainer.transform.GetChild(worldIndex);
-        var levelTemplate = world.transform.GetChild(levelIndex);
-        level = Instantiate(levelTemplate.gameObject).GetComponent<Level>();
-        level.gameObject.SetActive(true);
+        var world = levelContainer.transform.GetChild(this.worldIndex);
+        var levelTemplate = world.transform.GetChild(this.levelIndex);
+        this.level = Instantiate(levelTemplate.gameObject).GetComponent<Level>();
+        this.level.gameObject.SetActive(true);
+        levelStartTime = DateTime.Now;
     }
 
     public void ResetLevel()

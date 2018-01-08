@@ -16,7 +16,11 @@ public class Collectible : MonoBehaviour
             }
 
             GetComponentInChildren<DragController>().enabled = value;
-            GetComponentInChildren<Collider2D>().enabled = value;
+
+            foreach (var collider in GetComponentsInChildren<Collider2D>())
+            {
+                collider.enabled = value;
+            }
         }
     }
 

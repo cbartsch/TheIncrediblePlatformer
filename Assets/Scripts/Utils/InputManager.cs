@@ -14,7 +14,7 @@ public static class InputManager
     public static bool HasTouch { get { return HasTouchScreenTouch || HasMouseClick; } }
 
     public static bool HasTouchScreenTouchDown { get { return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began; } }
-    public static bool HasMouseClickDown { get { return !HasTouchScreenTouchDown && Input.GetMouseButton(0); } }
+    public static bool HasMouseClickDown { get { return !HasTouchScreenTouchDown && Input.GetMouseButtonDown(0); } }
     public static bool HasTouchDown { get { return HasTouchScreenTouchDown || HasMouseClickDown; } }
 
 
