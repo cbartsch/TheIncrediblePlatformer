@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class GameCameraController : MonoBehaviour
 {
     //height of screen in game units
     //cameras are configured to display this height of the world
-    public const float SCREEN_HEIGHT = 12;
+    public const float SCREEN_HEIGHT = 10;
 
     private Camera camera;
 
@@ -20,6 +20,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+
         //move camera to follow player(s)
 
         var level = GameManager.Instance.level;

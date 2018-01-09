@@ -25,7 +25,7 @@ public class MoveItem : MonoBehaviour {
         if (body)
         {
             var position = GetComponent<Collider2D>().bounds.center;
-            body.bodyType = usePhysics && CameraController.IsInMainCamera(position) ?
+            body.bodyType = usePhysics && GameCameraController.IsInMainCamera(position) ?
                 RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
         }
     }
