@@ -15,6 +15,11 @@ public class MoveItem : MonoBehaviour {
 	}
 	
 	void Update () {
+	    if (DragController.DragObject == gameObject)
+	    {
+	        transform.rotation = startRotation;
+	    }
+
         //enable physics only if property is set and if item is currently dropped in game area
         var body = GetComponent<Rigidbody2D>();
         if (body)

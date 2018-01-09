@@ -7,6 +7,7 @@ public class DragController : MonoBehaviour
 {
     //static - only allow 1 drag at a time globally
     public static bool DragActive { get; private set; }
+    public static GameObject DragObject { get; private set; }
 
     public GameObject crosshairPrefab;
 
@@ -62,6 +63,7 @@ public class DragController : MonoBehaviour
             //not dragging but touch is active -> start dragging now
             Dragging = true;
             DragActive = true;
+            DragObject = gameObject;
 
             //on touch screen, move center; with mouse, move exact click piont
             touchPivot = transform.position - (InputManager.HasTouchScreenTouch ? Center : touchPosWorld);
@@ -71,6 +73,7 @@ public class DragController : MonoBehaviour
             //dragging but no touch active anymore -> stop dragging now
             Dragging = false;
             DragActive = false;
+            DragObject = null;
         }
         if (Dragging)
         {

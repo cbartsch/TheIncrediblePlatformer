@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1385164466696158}
   m_IsPrefabParent: 1
+--- !u!1 &1324597221819648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4756203060854696}
+  - component: {fileID: 61042920302525688}
+  m_Layer: 8
+  m_Name: DragCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1385164466696158
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +40,6 @@ GameObject:
   - component: {fileID: 114456794858801488}
   - component: {fileID: 114803605121502760}
   - component: {fileID: 60364432245753756}
-  - component: {fileID: 61396541395985236}
   m_Layer: 0
   m_Name: PhysicsMovePlatform
   m_TagString: Ground
@@ -39,10 +54,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1385164466696158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.13, y: -13.09, z: 1}
+  m_LocalPosition: {x: 7.8799987, y: -12.84, z: 0}
   m_LocalScale: {x: 0.05, y: 0.050000004, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4756203060854696}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4756203060854696
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324597221819648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4515800130188810}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50576115614491224
@@ -89,18 +118,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 8.159027, y: 19.508093}
-      - {x: 21.97979, y: -0.001296997}
+    - - {x: 11.336212, y: 19.190367}
+      - {x: 21.741505, y: -0.23958203}
       - {x: 107.006546, y: 0.0002479553}
-      - {x: 121.3051, y: 18.820284}
+      - {x: 116.62187, y: 18.582151}
       - {x: 127.00278, y: 20.992601}
       - {x: 0, y: 21}
---- !u!61 &61396541395985236
+--- !u!61 &61042920302525688
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1385164466696158}
+  m_GameObject: {fileID: 1324597221819648}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -133,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crosshairPrefab: {fileID: 1890345527224608, guid: 93fae1ce591d7ad49a8bd1ed2514ee32,
     type: 2}
-  moveAreaCollider: {fileID: 61396541395985236}
+  moveAreaCollider: {fileID: 61042920302525688}
 --- !u!114 &114803605121502760
 MonoBehaviour:
   m_ObjectHideFlags: 1
