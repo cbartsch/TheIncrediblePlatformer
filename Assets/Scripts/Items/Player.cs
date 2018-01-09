@@ -104,8 +104,8 @@ public class Player : MonoBehaviour
 
         animator.runtimeAnimatorController = typeVisuals[PlayerData.type].animator;
 
-        //can't jump while running or in the air
-        if (willJump && GroundContact && !running)
+        //can't jump while in the air
+        if (willJump && GroundContact)
         {
             DoJump();
         }
