@@ -65,7 +65,7 @@ public class DragController : MonoBehaviour
             DragActive = true;
             DragObject = gameObject;
 
-            //on touch screen, move center; with mouse, move exact click piont
+            //on touch screen, move center; with mouse, move exact click point
             touchPivot = transform.position - (InputManager.HasTouchScreenTouch ? Center : touchPosWorld);
         }
         if (Dragging && !InputManager.HasTouch)

@@ -20,7 +20,6 @@ public class GameCameraController : MonoBehaviour
 
     void Update()
     {
-
         //move camera to follow player(s)
 
         var level = GameManager.Instance.level;
@@ -47,8 +46,7 @@ public class GameCameraController : MonoBehaviour
     {
         //find average of all players' positions (sum / length)
         var positions = players.Select(p => p.transform.position);
-        var playerPos = positions.Aggregate((a, b) => a + b) / players.Length;
-        return playerPos;
+        return positions.Aggregate((a, b) => a + b) / players.Length;
     }
 
     private Vector3 computeNewPos(Bounds bounds, Vector3 range, Vector3 playerPos)
@@ -67,9 +65,11 @@ public class GameCameraController : MonoBehaviour
 
     private Vector3 computeRange(Bounds bounds)
     {
+        float aspectRatio = (float) camera.pixelWidth / camera.pixelHeight;
+
         //compute range the camera can move - difference of level size and camera size
         var range = bounds.extents - new Vector3(
-                        x: camera.orthographicSize * (float)camera.pixelWidth / camera.pixelHeight,
+                        x: camera.orthographicSize * aspectRatio,
                         y: camera.orthographicSize);
 
         //if range is < 0, camera can not move at all - clamp to 0 in this case
