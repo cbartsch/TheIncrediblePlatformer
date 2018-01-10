@@ -14,6 +14,13 @@ public class Cloud : MonoBehaviour
     {
         //cloud moves at random velocity
         velocity = Random.Range(-maxVelocity, maxVelocity);
+
+        var level = GetComponentInParent<Level>();
+        if (level)
+        {
+            minX = level.levelBounds.min.x - 8;
+            maxX = level.levelBounds.max.x + 8;
+        }
     }
     
     void Update()

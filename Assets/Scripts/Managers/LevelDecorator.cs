@@ -7,7 +7,6 @@ public class LevelDecorator : MonoBehaviour
     public static LevelDecorator Instance { get; private set; }
 
     public List<GameObject> decorPrefabs;
-    public int minDecors = 1, maxDecors = 10;
 
     void Awake()
     {
@@ -16,7 +15,7 @@ public class LevelDecorator : MonoBehaviour
 
     public void Decorate(Level level)
     {
-        for (int i = 0; i < Random.Range(minDecors, maxDecors); i++)
+        for (int i = 0; i < Random.Range(level.minDecors, level.maxDecors); i++)
         {
             SpawnDecor(level);
         }

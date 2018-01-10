@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         level = FindObjectOfType<Level>();
+
+        levelIndex = Persistence.LevelNum;
+        worldIndex = Persistence.WorldNum;
     }
 
     void Update()
@@ -120,6 +123,9 @@ public class GameManager : MonoBehaviour
         {
             worldIndex = 0;
         }
+
+        Persistence.LevelNum = levelIndex;
+        Persistence.WorldNum = worldIndex;
     }
 
     private void CreateLevel()

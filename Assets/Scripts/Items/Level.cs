@@ -6,6 +6,8 @@ public class Level : MonoBehaviour {
 
     public GameObject spawnPoint;
 
+    public int minDecors = 10, maxDecors = 20;
+
     public Bounds levelBounds = new Bounds(
         new Vector3(0, -3, 0),
         new Vector3(21, 9, 0)
