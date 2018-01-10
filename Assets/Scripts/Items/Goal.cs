@@ -25,17 +25,7 @@ public class Goal : MonoBehaviour
         if (other.tag == "Player" && other.isActiveAndEnabled &&
             (player = other.GetComponentInParent<Player>()).PlayerData.type == this.type)
         {
-            //remove first to prevent calling the handler multiple times
-            player.Removed -= Player_Removed;
-
-            //call GoalReached after player's remove animation has finished
-            player.Removed += Player_Removed;
-            player.Remove();
+            player.Remove(true);
         }
-    }
-
-    private void Player_Removed(object sender, System.EventArgs e)
-    {
-        GameManager.Instance.GoalReached();
     }
 }

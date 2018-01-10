@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     public float spawnTime = 0.3f;
 
     //called after despawn animation
-    public event EventHandler Removed;
+    public event Action GoalReached;
 
     enum State { Idle, WalkRight, WalkLeft };
 
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     private bool willJump = false;
     private bool running = false;
     private bool spawning = false;
+    private bool hasReachedGoal = false;
     private bool despawning = false;
 
     private bool GroundContact { get { return numGroundContacts > 0; } }
@@ -92,10 +93,12 @@ public class Player : MonoBehaviour
             {
                 c.a = 0;
                 despawning = false;
-                if (Removed != null)
+
+                if (hasReachedGoal && GoalReached != null)
                 {
-                    Removed(this, new EventArgs());
+                    this.GoalReached();
                 }
+
                 Destroy(gameObject);
             }
             spriteRenderer.color = c;
@@ -256,8 +259,12 @@ public class Player : MonoBehaviour
         flipped = true;
     }
 
-    public void Remove()
+    public void Remove(bool hasReachedGoal = false)
     {
+        if (hasReachedGoal)
+        {
+            this.hasReachedGoal = true;
+        }
         despawning = true;
     }
 }

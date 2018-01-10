@@ -83,7 +83,8 @@ public class GameManager : MonoBehaviour
         {
             var player = Instantiate(playerPrefab, level.spawnPoint.transform.position, Quaternion.identity, level.transform);
             var playerC = player.GetComponent<Player>();
-
+            
+            playerC.GoalReached += GoalReached;
             playerC.PlayerData = data;
             playerC.Level = level;
 
@@ -150,7 +151,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetPlayers()
     {
-        if(spawnRoutine != null)
+        if (spawnRoutine != null)
         {
             StopCoroutine(spawnRoutine);
             spawningPlayers = false;
