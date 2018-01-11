@@ -1,23 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MoveItem : MonoBehaviour {
 
     public bool usePhysics = false;
 
-    private Vector3 startPosition;
+    private Vector3 startPosition, dropPosition;
     private Quaternion startRotation;
 
-	void Start () {
+	void Start ()
+	{
         startPosition = transform.position;
         startRotation = transform.rotation;
+	    dropPosition = startPosition;
 	}
 	
-	void Update () {
+	void Update ()
+	{
 	    if (DragController.DragObject == gameObject)
 	    {
 	        transform.rotation = startRotation;
+	        dropPosition = transform.position;
+	    }
+        else if (GameManager.Instance.Paused)
+	    {
+	        Reset();
 	    }
 
         //enable physics only if property is set and if item is currently dropped in game area
@@ -25,9 +34,17 @@ public class MoveItem : MonoBehaviour {
         if (body)
         {
             var position = GetComponent<Collider2D>().bounds.center;
-            body.bodyType = usePhysics && GameCameraController.IsInMainCamera(position) ?
+            var isInLevel = GameCameraController.IsInMainCamera(position);
+            var playersDespawning = FindObjectsOfType<Player>().Any(p => p.Despawning);
+            body.bodyType = usePhysics && isInLevel && !playersDespawning ? 
                 RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
         }
+    }
+
+    private void Reset()
+    {
+        transform.rotation = startRotation;
+        transform.position = dropPosition;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -41,4 +58,16 @@ public class MoveItem : MonoBehaviour {
             transform.rotation = startRotation;
         }
     }
- }
+
+    public static void ResetAll(Level level)
+    {
+        if (!level)
+        {
+            return;
+        }
+        foreach (var c in level.GetComponentsInChildren<MoveItem>())
+        {
+            c.Reset();
+        }
+    }
+}

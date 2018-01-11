@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     private Coroutine spawnRoutine;
 
+    private bool wasPaused;
+
     //TODO
     public int WorldNum { get { return 1; } }
 
@@ -54,18 +56,21 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         var isPaused = Paused || DragController.DragActive;
+
         var players = FindObjectsOfType<Player>();
-        Time.timeScale = isPaused && players.Length == 0 ? 0 : 1;
-        if (isPaused)
+        Time.timeScale = isPaused ? 0 : 1;
+        if (isPaused && !wasPaused)
         {
             ResetPlayers();
+            Collectible.ResetAll(level);
+            MoveItem.ResetAll(level);
         }
 
         if (!level)
         {
             CreateLevel();
         }
-        if (players.Length == 0 && !spawningPlayers)
+        if (players.Length == 0 && !spawningPlayers && !isPaused)
         {
             Collectible.ResetAll(level);
             activePlayers = level.playerData.Count;
@@ -73,12 +78,12 @@ public class GameManager : MonoBehaviour
 
             spawnRoutine = StartCoroutine(SpawnPlayers());
         }
+
+        wasPaused = isPaused;
     }
 
     private IEnumerator SpawnPlayers()
     {
-        yield return new WaitForSeconds(respawnTime);
-
         foreach (var data in level.playerData)
         {
             var player = Instantiate(playerPrefab, level.spawnPoint.transform.position, Quaternion.identity, level.transform);
