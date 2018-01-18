@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     private bool running = false;
     private bool spawning = false;
     private bool hasReachedGoal = false;
-    private bool despawning = false;
+    public bool Despawning { get; private set; }
 
     private bool GroundContact { get { return numGroundContacts > 0; } }
 
@@ -65,13 +65,14 @@ public class Player : MonoBehaviour
         c.a = 0;
         spriteRenderer.color = c;
         spriteRenderer.sprite = typeVisuals[PlayerData.type].startSprite;
+        animator.enabled = false;
     }
 
     void Update()
     {
-        var enabled = !spawning && !despawning;
+        var enabled = !spawning && !Despawning;
         animator.enabled = enabled;
-        body.bodyType = enabled ? RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
+        body.simulated = enabled;
 
         if (spawning)
         {
@@ -85,14 +86,14 @@ public class Player : MonoBehaviour
             spriteRenderer.color = c;
             return;
         }
-        if (despawning)
+        if (Despawning)
         {
             Color c = spriteRenderer.color;
             c.a -= Time.deltaTime / spawnTime;
             if (c.a <= 0)
             {
                 c.a = 0;
-                despawning = false;
+                Despawning = false;
 
                 if (hasReachedGoal && GoalReached != null)
                 {
@@ -261,10 +262,10 @@ public class Player : MonoBehaviour
 
     public void Remove(bool hasReachedGoal = false)
     {
+        Despawning = true;
         if (hasReachedGoal)
         {
             this.hasReachedGoal = true;
         }
-        despawning = true;
     }
 }

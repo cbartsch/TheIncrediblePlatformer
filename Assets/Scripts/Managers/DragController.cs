@@ -53,6 +53,14 @@ public class DragController : MonoBehaviour
     
     void Update()
     {
+        bool dragEnabled = Utils.FindCameraAtWorldPos(transform.position) != Camera.main ||
+                           GameManager.Instance.Paused || Dragging;
+        crosshair.SetActive(dragEnabled);
+        if (!dragEnabled)
+        {
+            return;
+        }
+
         var touchPosWorld = Dragging ? InputManager.TouchPosWorldForDrag : InputManager.TouchPosWorld;
 
         crosshair.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, Dragging ? 1 : 0.2f);

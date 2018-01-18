@@ -34,9 +34,17 @@ public static class Utils
         return null;
     }
 
+    //transform a position from contained camera's pixel space to world space
     public static Vector3 ScreenPosToWorld(Vector3 screenPos)
     {
         Camera camera = FindCameraAtScreenPos(screenPos);
         return camera ? camera.ScreenToWorldPoint(screenPos) : default(Vector3);
+    }
+
+    //scale a vector from main camera pixel space to world space
+    public static Vector3 ScaleScreenToWorld(Vector3 screenVector)
+    {
+        Camera camera = Camera.main;
+        return screenVector * camera.orthographicSize * 2 / camera.rect.height / Screen.height;
     }
 }
