@@ -3,35 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MoveItem))]
 public class Collectible : MonoBehaviour
 {
 
-    bool Enabled
-    {
-        set
-        {
-            foreach (var renderer in GetComponentsInChildren<Renderer>())
-            {
-                renderer.enabled = value;
-            }
-
-            GetComponentInChildren<DragController>().enabled = value;
-
-            foreach (var collider in GetComponentsInChildren<Collider2D>())
-            {
-                collider.enabled = value;
-            }
-        }
-    }
-
     public void Collect()
     {
-        Enabled = false;
+        GetComponent<MoveItem>().Enabled = false;
     }
 
     public void Reset()
     {
-        Enabled = true;
+        GetComponent<MoveItem>().Enabled = true;
     }
 
     public static void ResetAll(Level level)

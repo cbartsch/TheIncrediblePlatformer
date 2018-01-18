@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
         if (players.Length == 0 && !spawningPlayers && !isPaused)
         {
             Collectible.ResetAll(level);
+            MoveItem.ResetAll(level);
             activePlayers = level.playerData.Count;
             spawningPlayers = true;
 
@@ -152,6 +153,7 @@ public class GameManager : MonoBehaviour
     public void TogglePause()
     {
         Paused = !Paused;
+        Debug.Log("paused:" + Paused);
     }
 
     public void ResetPlayers()

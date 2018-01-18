@@ -10,7 +10,25 @@ public class MoveItem : MonoBehaviour {
     private Vector3 startPosition, dropPosition;
     private Quaternion startRotation;
 
-	void Start ()
+    internal bool Enabled
+    {
+        set
+        {
+            foreach (var renderer in GetComponentsInChildren<Renderer>())
+            {
+                renderer.enabled = value;
+            }
+
+            GetComponentInChildren<DragController>().enabled = value;
+
+            foreach (var collider in GetComponentsInChildren<Collider2D>())
+            {
+                collider.enabled = value;
+            }
+        }
+    }
+
+    void Start ()
 	{
         startPosition = transform.position;
         startRotation = transform.rotation;
@@ -43,6 +61,7 @@ public class MoveItem : MonoBehaviour {
 
     private void Reset()
     {
+        Enabled = true;
         transform.rotation = startRotation;
         transform.position = dropPosition;
     }
@@ -53,9 +72,7 @@ public class MoveItem : MonoBehaviour {
 
         if (collTag == "KillZone")
         {
-            //reset position if item falls out of the level
-            transform.position = startPosition;
-            transform.rotation = startRotation;
+            Enabled = false;
         }
     }
 

@@ -213,6 +213,8 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(GameManager.Instance.Paused) return;
+
         var collTag = other.tag;
 
         if (collTag == "KillZone")
