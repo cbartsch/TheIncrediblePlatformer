@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //when walking slower than this, player turns around
+    private const float MIN_WALK_VELOCITY = 0.8f;
+
     [Serializable]
     public class Data
     {
@@ -72,7 +75,8 @@ public class Player : MonoBehaviour
     {
         var enabled = !spawning && !Despawning;
         animator.enabled = enabled;
-        body.simulated = enabled;
+        var groundCrouch = crouching && GroundContact;
+        body.simulated = enabled && !groundCrouch;
 
         if (spawning)
         {
@@ -130,11 +134,12 @@ public class Player : MonoBehaviour
 
     void Walk()
     {
-        bool moving = (state == State.WalkRight && body.velocity.x > 0.01) ||
-            (state == State.WalkLeft && body.velocity.x < -0.01);
+        bool moving = (state == State.WalkRight && body.velocity.x > MIN_WALK_VELOCITY) ||
+            (state == State.WalkLeft && body.velocity.x < -MIN_WALK_VELOCITY);
         didWalk = didWalk || moving;
         if (!moving && GroundContact && didWalk)
         {
+            didWalk = false;
             FlipWalkDirection();
         }
 
@@ -158,6 +163,7 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
+        running = false;
         crouching = true;
         Invoke("JumpAfterCrouch", crouchTime);
     }

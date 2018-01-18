@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-{ 
+{
     public static GameManager Instance
     {
         get;
@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
         if (isPaused && !wasPaused)
         {
             ResetPlayers();
-            Collectible.ResetAll(level);
             MoveItem.ResetAll(level);
         }
 
@@ -72,7 +71,6 @@ public class GameManager : MonoBehaviour
         }
         if (players.Length == 0 && !spawningPlayers && !isPaused)
         {
-            Collectible.ResetAll(level);
             MoveItem.ResetAll(level);
             activePlayers = level.playerData.Count;
             spawningPlayers = true;
@@ -89,7 +87,7 @@ public class GameManager : MonoBehaviour
         {
             var player = Instantiate(playerPrefab, level.spawnPoint.transform.position, Quaternion.identity, level.transform);
             var playerC = player.GetComponent<Player>();
-            
+
             playerC.GoalReached += GoalReached;
             playerC.PlayerData = data;
             playerC.Level = level;
@@ -118,7 +116,7 @@ public class GameManager : MonoBehaviour
         var timeDiff = DateTime.Now - levelStartTime;
         GameAnalytics.Instance.LevelFinished(WorldNum, LevelNum, timeDiff);
 
-        ResetLevel();
+        DestroyLevel();
         levelIndex++;
         if (levelIndex >= NumLevelsInWorld)
         {
@@ -144,10 +142,18 @@ public class GameManager : MonoBehaviour
         levelStartTime = DateTime.Now;
     }
 
-    public void ResetLevel()
+    //hard reset: destroy level (use when switching to another level)
+    public void DestroyLevel()
     {
         Destroy(level.gameObject);
         level = null;
+    }
+
+    //soft reset: reset all objects in level
+    public void ResetLevel()
+    {
+        ResetPlayers();
+        MoveItem.ResetAll(level, resetDropPosition: true);
     }
 
     public void TogglePause()

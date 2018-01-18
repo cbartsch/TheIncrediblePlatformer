@@ -28,7 +28,7 @@ public class MoveItem : MonoBehaviour {
         }
     }
 
-    void Start ()
+    void Awake ()
 	{
         startPosition = transform.position;
         startRotation = transform.rotation;
@@ -59,8 +59,13 @@ public class MoveItem : MonoBehaviour {
         }
     }
 
-    private void Reset()
+    private void Reset(bool resetDropPosition = false)
     {
+        if (resetDropPosition)
+        {
+            dropPosition = startPosition;
+        }
+
         Enabled = true;
         transform.rotation = startRotation;
         transform.position = dropPosition;
@@ -76,7 +81,7 @@ public class MoveItem : MonoBehaviour {
         }
     }
 
-    public static void ResetAll(Level level)
+    public static void ResetAll(Level level, bool resetDropPosition = false)
     {
         if (!level)
         {
@@ -84,7 +89,7 @@ public class MoveItem : MonoBehaviour {
         }
         foreach (var c in level.GetComponentsInChildren<MoveItem>())
         {
-            c.Reset();
+            c.Reset(resetDropPosition);
         }
     }
 }

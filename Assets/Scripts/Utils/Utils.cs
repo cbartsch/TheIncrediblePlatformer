@@ -26,7 +26,8 @@ public static class Utils
         foreach (var camera in Camera.allCameras)
         {
             var relativePos = camera.WorldToViewportPoint(worldPos);
-            if (new Rect(0, 0, 1, 1).Contains(relativePos))
+            var delta = 0.1f;
+            if (new Rect(-delta, -delta, 1 + 2*delta, 1 + 2*delta).Contains(relativePos))
             {
                 return camera;
             }

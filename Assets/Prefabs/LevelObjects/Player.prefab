@@ -171,10 +171,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 212067350151655050}
   body: {fileID: 50526747394103088}
   feetCircleCollider: {fileID: 58584732749638094}
-  jumpForce: 20
-  walkForce: 10
-  runForce: 20
-  drag: 1
+  jumpForce: 21
+  walkForce: 17
+  runForce: 34
+  drag: 2
   crouchTime: 0.1
   runDuration: 0.5
   spawnTime: 0.3
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc3c341d9eae3fe41ab5bc9baddc8d52, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
