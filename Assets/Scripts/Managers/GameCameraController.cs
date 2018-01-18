@@ -12,11 +12,12 @@ public class GameCameraController : MonoBehaviour
 
     private Camera camera;
 
+    private Vector3 lastDragPos;
+
     void Start()
     {
         camera = GetComponent<Camera>();
     }
-
 
     void Update()
     {
@@ -28,18 +29,41 @@ public class GameCameraController : MonoBehaviour
 
         var bounds = level.levelBounds;
 
-        //find all players
-        var players = level.GetComponentsInChildren<Player>();
+        Vector3 cameraPos = camera.transform.position;
+        bool interpolate;
+        if (!DragController.DragActive && InputManager.HasTouch)
+        {
+            var pos = InputManager.TouchPosScreen;
+            if (InputManager.HasTouchDown)
+            {
+                lastDragPos = pos;
+            }
+            if (InputManager.HasTouch)
+            {
+                var diff = lastDragPos - pos;
+                cameraPos += Utils.ScaleScreenToWorld(diff);
+                lastDragPos = pos;
+            }
 
-        if (players == null || players.Length == 0) { return; }
+            //don't interpolate dragging
+            interpolate = false;
+        }
+        else
+        { 
+            //find all players
+            var players = level.GetComponentsInChildren<Player>();
 
-        var playerPos = computePlayerPos(players);
+            if (players == null || players.Length == 0) { return; }
+
+            interpolate = true;
+            cameraPos = computePlayerPos(players);
+        }
 
         var range = computeRange(bounds);
 
-        var newPos = computeNewPos(bounds, range, playerPos);
+        var newPos = computeNewPos(bounds, range, cameraPos);
 
-        applyPosition(newPos);
+        applyPosition(newPos, interpolate);
     }
 
     private static Vector3 computePlayerPos(Player[] players)
@@ -49,7 +73,7 @@ public class GameCameraController : MonoBehaviour
         return positions.Aggregate((a, b) => a + b) / players.Length;
     }
 
-    private Vector3 computeNewPos(Bounds bounds, Vector3 range, Vector3 playerPos)
+    private Vector3 computeNewPos(Bounds bounds, Vector3 range, Vector3 cameraPos)
     {
         //compute max and min position of camera - center of level plus/minus the range
         var maxPos = bounds.center + range;
@@ -57,8 +81,8 @@ public class GameCameraController : MonoBehaviour
 
         //set camera X/Y position to player position but clamp to max and min position
         return new Vector3(
-            Mathf.Clamp(playerPos.x, minPos.x, maxPos.x),
-            Mathf.Clamp(playerPos.y, minPos.y, maxPos.y),
+            Mathf.Clamp(cameraPos.x, minPos.x, maxPos.x),
+            Mathf.Clamp(cameraPos.y, minPos.y, maxPos.y),
             camera.transform.position.z
         );
     }
@@ -76,13 +100,13 @@ public class GameCameraController : MonoBehaviour
         return new Vector3(Mathf.Max(range.x, 0), Mathf.Max(range.y, 0));
     }
 
-    private void applyPosition(Vector3 newPos)
+    private void applyPosition(Vector3 newPos, bool interpolate)
     {
         var diff = newPos - camera.transform.position;
 
         //if position change is small, apply directly, otherwise apply gradually using lerp
-        camera.transform.position = diff.sqrMagnitude < 0.1 ? newPos :
-            Vector3.Lerp(camera.transform.position, newPos, Time.deltaTime * 10);
+        camera.transform.position = diff.sqrMagnitude < 1 || !interpolate ? newPos :
+            Vector3.Lerp(camera.transform.position, newPos, Time.deltaTime * 5);
     }
 
     public static bool IsInMainCamera(Vector3 position)

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Persistence : MonoBehaviour
 {
-
     public static int LevelNum
     {
         get { return PlayerPrefs.GetInt("LevelNum", 0); }
@@ -15,5 +14,14 @@ public class Persistence : MonoBehaviour
     {
         get { return PlayerPrefs.GetInt("WorldNum", 0); }
         set { PlayerPrefs.SetInt("WorldNum", value); PlayerPrefs.Save(); }
+    }
+
+    void Awake()
+    {
+#if UNITY_EDITOR
+        //don't keep progress in editor
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+#endif
     }
 }
