@@ -48,4 +48,13 @@ public static class Utils
         Camera camera = Camera.main;
         return screenVector * camera.orthographicSize * 2 / camera.rect.height / Screen.height;
     }
+
+    public static Bounds TotalBounds(Collider2D[] allColliders)
+    {
+        return allColliders.Select(p => p.bounds).Aggregate((a, b) =>
+        {
+            a.Encapsulate(b);
+            return a;
+        });
+    }
 }

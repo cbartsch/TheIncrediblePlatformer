@@ -48,9 +48,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         level = FindObjectOfType<Level>();
-
-        levelIndex = Persistence.LevelNum;
-        worldIndex = Persistence.WorldNum;
     }
 
     void Update()
@@ -99,7 +96,7 @@ public class GameManager : MonoBehaviour
         spawnRoutine = null;
     }
 
-    public void GoalReached()
+    public void GoalReached(bool isContinueGoal)
     {
         if (!level) { return; }
 
@@ -107,30 +104,38 @@ public class GameManager : MonoBehaviour
 
         if (activePlayers == 0)
         {
-            LevelFinished();
+            LevelFinished(isContinueGoal:isContinueGoal);
         }
     }
 
-    private void LevelFinished()
+    private void LevelFinished(bool isContinueGoal = false)
     {
         var timeDiff = DateTime.Now - levelStartTime;
         GameAnalytics.Instance.LevelFinished(WorldNum, LevelNum, timeDiff);
 
         DestroyLevel();
-        levelIndex++;
-        if (levelIndex >= NumLevelsInWorld)
+
+        if (isContinueGoal)
         {
-            levelIndex = 0;
-            worldIndex++;
+            worldIndex = Persistence.WorldNum;
+            levelIndex = Persistence.LevelNum;
+        }
+        else
+        {
+            levelIndex++;
+            if (levelIndex >= NumLevelsInWorld)
+            {
+                levelIndex = 0;
+                worldIndex++;
+            }
+
+            if (worldIndex >= NumWorlds)
+            {
+                worldIndex = 0;
+            }
         }
 
-        if (worldIndex >= NumWorlds)
-        {
-            worldIndex = 0;
-        }
-
-        Persistence.LevelNum = levelIndex;
-        Persistence.WorldNum = worldIndex;
+        Persistence.LevelReached(worldIndex, levelIndex);
     }
 
     private void CreateLevel()

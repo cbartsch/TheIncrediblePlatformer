@@ -7,21 +7,32 @@ public class Persistence : MonoBehaviour
     public static int LevelNum
     {
         get { return PlayerPrefs.GetInt("LevelNum", 0); }
-        set { PlayerPrefs.SetInt("LevelNum", value); PlayerPrefs.Save(); }
+        private set { PlayerPrefs.SetInt("LevelNum", value); PlayerPrefs.Save(); }
     }
 
     public static int WorldNum
     {
         get { return PlayerPrefs.GetInt("WorldNum", 0); }
-        set { PlayerPrefs.SetInt("WorldNum", value); PlayerPrefs.Save(); }
+        private set { PlayerPrefs.SetInt("WorldNum", value); PlayerPrefs.Save(); }
     }
 
-    void Awake()
+    public static bool HasLevelData
     {
-#if UNITY_EDITOR
-        //don't keep progress in editor
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-#endif
+        get { return WorldNum > 0 || LevelNum > 0; }
+    }
+
+    public static void LevelReached(int worldIndex, int levelIndex)
+    {
+        if (worldIndex == WorldNum)
+        {
+            if (levelIndex > LevelNum) LevelNum = levelIndex;
+        }
+
+        if (worldIndex > WorldNum)
+        {
+            WorldNum = worldIndex;
+            LevelNum = levelIndex;
+        }
+
     }
 }

@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     public float spawnTime = 0.3f;
 
     //called after despawn animation
-    public event Action GoalReached;
+    public event Action<bool> GoalReached;
 
     enum State { Idle, WalkRight, WalkLeft };
 
@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     private bool running = false;
     private bool spawning = false;
     private bool hasReachedGoal = false;
+    private bool hasReachedContinueGoal = false;
     public bool Despawning { get; private set; }
 
     private bool GroundContact { get { return numGroundContacts > 0; } }
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour
 
                 if (hasReachedGoal && GoalReached != null)
                 {
-                    this.GoalReached();
+                    this.GoalReached(hasReachedContinueGoal);
                 }
 
                 Destroy(gameObject);
@@ -268,12 +269,13 @@ public class Player : MonoBehaviour
         flipped = true;
     }
 
-    public void Remove(bool hasReachedGoal = false)
+    public void Remove(bool hasReachedGoal = false, bool isContinueGoal = false)
     {
         Despawning = true;
         if (hasReachedGoal)
         {
             this.hasReachedGoal = true;
+            this.hasReachedContinueGoal = isContinueGoal;
         }
     }
 }

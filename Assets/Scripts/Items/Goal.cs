@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+    public bool isContinueGoal = false;
     public int type = 0;
 
     public List<RuntimeAnimatorController> typeAnims;
@@ -25,7 +26,7 @@ public class Goal : MonoBehaviour
         if (other.tag == "Player" && other.isActiveAndEnabled &&
             (player = other.GetComponentInParent<Player>()).PlayerData.type == this.type)
         {
-            player.Remove(true);
+            player.Remove(hasReachedGoal:true, isContinueGoal:this.isContinueGoal);
         }
     }
 }
