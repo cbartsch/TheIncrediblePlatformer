@@ -16,8 +16,11 @@ public class Goal : MonoBehaviour
     
     void Update()
     {
-        //set animation type/color dependent on goal type
-        GetComponentInChildren<Animator>().runtimeAnimatorController = typeAnims[type];
+        if (!isContinueGoal) //continue goal has special animation
+        {
+            //set animation type/color dependent on goal type
+            GetComponentInChildren<Animator>().runtimeAnimatorController = typeAnims[type];
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
