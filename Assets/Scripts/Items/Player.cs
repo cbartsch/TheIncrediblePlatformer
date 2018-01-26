@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     public float runDuration = 2;
     public float spawnTime = 0.3f;
 
-    public PlayerSounds sounds;
+    public SoundEffects sounds;
 
     //called after despawn animation
     public event Action<bool> GoalReached;
@@ -78,8 +78,6 @@ public class Player : MonoBehaviour
     {
         var enabled = !spawning && !Despawning;
         animator.enabled = enabled;
-        var groundCrouch = crouching && GroundContact;
-        body.simulated = enabled && !groundCrouch;
 
         if (spawning)
         {
@@ -161,13 +159,14 @@ public class Player : MonoBehaviour
                 break;
         }
         float force = running ? runForce : walkForce;
-        body.AddForce(Vector2.right * force * forceFactor * Time.deltaTime * 60);
+        body.AddForce(Vector2.right * force * forceFactor * Time.deltaTime * PhysicsManager.UPDATES_PER_SECOND);
     }
 
     public void Jump()
     {
         running = false;
         crouching = true;
+        body.simulated = !GroundContact; //if crouching on ground, stop moving
         Invoke("JumpAfterCrouch", crouchTime);
     }
 
@@ -178,6 +177,7 @@ public class Player : MonoBehaviour
 
     private void DoJump()
     {
+        body.simulated = true;  //if crouching on ground, start moving again
         body.velocity = new Vector2(body.velocity.x, 0);
         body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
@@ -215,6 +215,8 @@ public class Player : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D coll)
     {
+        if(!body.simulated) return;
+
         var collTag = coll.gameObject.tag;
         if (collTag == "Ground")
         {
@@ -284,6 +286,9 @@ public class Player : MonoBehaviour
         {
             sounds.PlayReachGoal();
         }
+
+        //stop physics while despawn animation is running
+        body.simulated = false;
 
         Despawning = true;
         if (hasReachedGoal)

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PhysicsManager : MonoBehaviour
 {
-
-    public int updatesPerSecond = 30;
+    public const int UPDATES_PER_SECOND = 50;
 
     private float deltaTime;
     private float remainingTime;
@@ -13,7 +12,7 @@ public class PhysicsManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    deltaTime = 1f / updatesPerSecond;
+	    deltaTime = 1f / UPDATES_PER_SECOND;
 	    remainingTime = deltaTime;
 	}
 	
@@ -26,5 +25,5 @@ public class PhysicsManager : MonoBehaviour
 	        Physics2D.Simulate(deltaTime);
 	        remainingTime += deltaTime;
 	    }
-	}
+    }
 }
