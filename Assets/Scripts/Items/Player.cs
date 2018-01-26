@@ -113,24 +113,20 @@ public class Player : MonoBehaviour
 
         animator.runtimeAnimatorController = typeVisuals[PlayerData.type].animator;
 
-        //can't jump while in the air
-        if (willJump && GroundContact)
-        {
-            DoJump();
-        }
-        else if (GroundContact)
-        {
-            Walk();
-        }
-
-        body.drag = GroundContact ? drag : 0;
-
         flipped = false;
 
         animator.SetBool("Crouching", crouching);
         animator.SetBool("Grounded", GroundContact);
         animator.SetBool("Running", running);
         animator.SetFloat("YVel", body.velocity.y);
+    }
+
+    void FixedUpdate()
+    {
+        if (GroundContact)
+        {
+            Walk();
+        }
     }
 
     void Walk()
@@ -164,6 +160,8 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
+        if (crouching) return;
+
         running = false;
         crouching = true;
         body.simulated = !GroundContact; //if crouching on ground, stop moving
@@ -172,7 +170,14 @@ public class Player : MonoBehaviour
 
     private void JumpAfterCrouch()
     {
-        willJump = true;
+        if (GroundContact || !body.simulated)
+        {
+            DoJump();
+        }
+        else
+        {
+            willJump = true;
+        }
     }
 
     private void DoJump()
@@ -210,17 +215,21 @@ public class Player : MonoBehaviour
         if (collTag == "Ground")
         {
             numGroundContacts++;
+            body.drag = GroundContact ? drag : 0;
+            if (willJump && GroundContact)
+            {
+                DoJump();
+            }
         }
     }
 
     void OnCollisionExit2D(Collision2D coll)
     {
-        if(!body.simulated) return;
-
         var collTag = coll.gameObject.tag;
         if (collTag == "Ground")
         {
             numGroundContacts--;
+            body.drag = GroundContact ? drag : 0;
         }
     }
 

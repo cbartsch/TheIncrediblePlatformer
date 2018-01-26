@@ -221,7 +221,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 212067350151655050}
   body: {fileID: 50526747394103088}
   feetCircleCollider: {fileID: 58584732749638094}
-  jumpForce: 27
+  jumpForce: 21
   walkForce: 20.4
   runForce: 40.8
   drag: 2
