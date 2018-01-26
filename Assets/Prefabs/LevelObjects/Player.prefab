@@ -195,6 +195,8 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: 87d0a30f4e23b5f4f8b1854b4b365538, type: 3}
   runClip: {fileID: 8300000, guid: 2e35cd27140a08d41a53428d175b122c, type: 3}
   coinClip: {fileID: 8300000, guid: ea91d3700ff34494faf322fbf79ccad8, type: 3}
+  dieClip: {fileID: 8300000, guid: 0ecd1a2af45519649baa2cd79cf6b4cd, type: 3}
+  reachGoalClip: {fileID: 8300000, guid: 2d6a324e88026954fa3145ba8a27f797, type: 3}
 --- !u!114 &114560506793394032
 MonoBehaviour:
   m_ObjectHideFlags: 1

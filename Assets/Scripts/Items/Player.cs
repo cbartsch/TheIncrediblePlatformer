@@ -230,7 +230,7 @@ public class Player : MonoBehaviour
 
         if (collTag == "KillZone")
         {
-            Remove();
+            Remove(didDie:true);
         }
 
         Collectible c;
@@ -274,8 +274,17 @@ public class Player : MonoBehaviour
         flipped = true;
     }
 
-    public void Remove(bool hasReachedGoal = false, bool isContinueGoal = false)
+    public void Remove(bool hasReachedGoal = false, bool isContinueGoal = false, bool didDie = false)
     {
+        if (didDie)
+        {
+            sounds.PlayDie();
+        }
+        else if (hasReachedGoal)
+        {
+            sounds.PlayReachGoal();
+        }
+
         Despawning = true;
         if (hasReachedGoal)
         {

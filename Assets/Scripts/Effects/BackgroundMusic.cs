@@ -9,6 +9,9 @@ public class BackgroundMusic : MonoBehaviour
     public AudioClip defaultMusicClip;
 
     public float pausePitch = 0.5f;
+    public float pitchSmoothTime = 3;
+    
+    private float pitchSmoothVelocity;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +34,9 @@ public class BackgroundMusic : MonoBehaviour
 	    var paused = GameManager.Instance.Paused || DragController.DragActive;
 
 	    var pitch = paused ? pausePitch : 1;
-	    audioSource.pitch = Mathf.Lerp(audioSource.pitch, pitch, Time.unscaledDeltaTime * 5);
+
+	    audioSource.pitch = Mathf.SmoothDamp(audioSource.pitch, pitch, ref pitchSmoothVelocity,
+	        pitchSmoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
 
 	    audioSource.enabled = Persistence.SoundsEnabled;
 	}

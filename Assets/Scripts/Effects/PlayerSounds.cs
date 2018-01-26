@@ -7,6 +7,8 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip jumpClip;
     public AudioClip runClip;
     public AudioClip coinClip;
+    public AudioClip dieClip;
+    public AudioClip reachGoalClip;
 
     void Update()
     {
@@ -32,6 +34,16 @@ public class PlayerSounds : MonoBehaviour
     public void PlayCoin()
     {
         playClip(coinClip);
+    }
+
+    public void PlayDie()
+    {
+        playClip(dieClip);
+    }
+
+    public void PlayReachGoal()
+    {
+        playClip(reachGoalClip);
     }
 
     private void playClip(AudioClip clip)
