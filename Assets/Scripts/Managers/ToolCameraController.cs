@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ToolCameraController : MonoBehaviour
 {
-
-    private Camera camera;
+    private new Camera camera;
 
     public SpriteRenderer toolAreaRenderer;
 
