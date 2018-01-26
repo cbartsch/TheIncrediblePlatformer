@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
     public float runDuration = 2;
     public float spawnTime = 0.3f;
 
+    public PlayerSounds sounds;
+
     //called after despawn animation
     public event Action<bool> GoalReached;
 
@@ -181,12 +183,16 @@ public class Player : MonoBehaviour
 
         willJump = false;
         crouching = false;
+
+        sounds.PlayJump();
     }
 
     public void Run()
     {
         running = true;
         Invoke("StopRun", runDuration);
+
+        sounds.PlayRun();
     }
 
     public void StopRun()
@@ -204,7 +210,6 @@ public class Player : MonoBehaviour
         if (collTag == "Ground")
         {
             numGroundContacts++;
-            Debug.Log("enter ground contact with " + coll.gameObject.name + " #" + numGroundContacts);
         }
     }
 
@@ -214,7 +219,6 @@ public class Player : MonoBehaviour
         if (collTag == "Ground")
         {
             numGroundContacts--;
-            Debug.Log("exit ground contact with " + coll.gameObject.name + " #" + numGroundContacts);
         }
     }
 
@@ -242,6 +246,7 @@ public class Player : MonoBehaviour
     {
         if (c.tag == "JumpItem")
         {
+            sounds.PlayCoin();
             Jump();
         }
         else if (c.tag == "RunItem")

@@ -30,9 +30,7 @@ public class GameManager : MonoBehaviour
 
     private bool wasPaused;
 
-    //TODO
-    public int WorldNum { get { return 1; } }
-
+    public int WorldNum { get { return worldIndex + 1; } }
     public int LevelNum { get { return levelIndex + 1; } }
 
     private int NumWorlds { get { return levelContainer.transform.childCount; } }

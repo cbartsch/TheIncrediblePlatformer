@@ -6,6 +6,8 @@ public class Level : MonoBehaviour {
 
     public GameObject spawnPoint;
 
+    public AudioClip musicClip;
+
     public int minDecors = 10, maxDecors = 20;
 
     public Bounds levelBounds = new Bounds(

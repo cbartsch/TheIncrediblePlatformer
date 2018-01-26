@@ -13,6 +13,10 @@ public class UiManager : MonoBehaviour
     public Image pauseButtonImage;
 
     public Sprite pauseSprite, playSprite;
+
+    public Image pauseButtonIcon, resetButtonIcon;
+
+    public Sprite resetSprite, soundsOnSprite, soundsOffSprite;
     
 	void Start () {
 		
@@ -26,5 +30,34 @@ public class UiManager : MonoBehaviour
 	    levelNum2.sprite = digitSprites[GameManager.Instance.LevelNum % 10];
 
 	    pauseButtonImage.sprite = GameManager.Instance.Paused ? playSprite : pauseSprite;
+
+	    var isMenuLevel = GameManager.Instance.WorldNum == 1 && GameManager.Instance.LevelNum == 1;
+        
+	    if (isMenuLevel)
+	    {
+	        resetButtonIcon.sprite = Persistence.SoundsEnabled ? soundsOnSprite : soundsOffSprite;
+	    }
+	    else
+	    {
+	        resetButtonIcon.sprite = resetSprite;
+	    }
 	}
+
+    public void ResetBtnPressed()
+    {
+        var isMenuLevel = GameManager.Instance.WorldNum == 1 && GameManager.Instance.LevelNum == 1;
+        if (isMenuLevel)
+        {
+            Persistence.SoundsEnabled = !Persistence.SoundsEnabled;
+        }
+        else
+        {
+            GameManager.Instance.ResetLevel();
+        }
+    }
+
+    public void PauseBtnPressed()
+    {
+        GameManager.Instance.TogglePause();
+    }
 }

@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 820899963}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -571,8 +572,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031953294}
-        m_MethodName: TogglePause
+      - m_Target: {fileID: 1479660819}
+        m_MethodName: PauseBtnPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -931,6 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 179590121}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -1151,8 +1153,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031953294}
-        m_MethodName: ResetLevel
+      - m_Target: {fileID: 1479660819}
+        m_MethodName: ResetBtnPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2517,6 +2519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 544904455}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -2780,6 +2783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 916654111}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -4869,7 +4873,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 498368780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 905770850}
@@ -5070,6 +5074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 815552261}
+  musicClip: {fileID: 0}
   minDecors: 15
   maxDecors: 40
   levelBounds:
@@ -6655,6 +6660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 449271965}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -8352,6 +8358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1015194415}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -8752,7 +8759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &861121275
 Transform:
   m_ObjectHideFlags: 0
@@ -8792,6 +8799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 85510052}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -8841,7 +8849,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 864821113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: -0.76, z: 0}
+  m_LocalPosition: {x: -1.3377228, y: -0.76, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 1082593843}
@@ -8905,6 +8913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1752882164}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -9420,6 +9429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1265752744}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -10885,6 +10895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 523860015}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -11036,6 +11047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 872648386}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -11296,6 +11308,130 @@ Transform:
   m_PrefabParentObject: {fileID: 4718545611485774, guid: e043cf295c40b784090f166119fc1d20,
     type: 2}
   m_PrefabInternal: {fileID: 919059029}
+--- !u!1 &1129825501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1129825502}
+  - component: {fileID: 1129825504}
+  - component: {fileID: 1129825503}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1129825502
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129825501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1741720636}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129825503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129825501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53f6b72eaa0d6f498240bf896ac9727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1129825504}
+  defaultMusicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
+  pausePitch: 0.5
+--- !u!82 &1129825504
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129825501}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!4 &1129963055 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4486977096374550, guid: 407196644830e5947974b08a9af60155,
@@ -11320,7 +11456,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4355376320700764, guid: 7df6012d494c69c46841b9a02301f398, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.967723
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 4355376320700764, guid: 7df6012d494c69c46841b9a02301f398, type: 2}
       propertyPath: m_LocalPosition.y
@@ -12557,7 +12693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -89.40039, y: -25}
+  m_AnchoredPosition: {x: -89.39844, y: -25}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1289853692
@@ -13337,6 +13473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 897359705}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -13483,7 +13620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25.40039, y: -23.800049}
+  m_AnchoredPosition: {x: -25.398438, y: -23.800049}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1417278691 stripped
@@ -13650,6 +13787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 244581611}
+  musicClip: {fileID: 8300000, guid: 3fdfd7a7e14705e41b960c716c2c356e, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -13888,6 +14026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 681057882}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -14090,6 +14229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1555312530}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -14225,6 +14365,11 @@ MonoBehaviour:
   pauseButtonImage: {fileID: 1496370853}
   pauseSprite: {fileID: 21300158, guid: 98b5672e742bee840b8acbe3fd251a42, type: 3}
   playSprite: {fileID: 21300164, guid: 98b5672e742bee840b8acbe3fd251a42, type: 3}
+  pauseButtonIcon: {fileID: 1496370853}
+  resetButtonIcon: {fileID: 2067434554}
+  resetSprite: {fileID: 21300092, guid: 98b5672e742bee840b8acbe3fd251a42, type: 3}
+  soundsOnSprite: {fileID: 21300010, guid: 98b5672e742bee840b8acbe3fd251a42, type: 3}
+  soundsOffSprite: {fileID: 21300032, guid: 98b5672e742bee840b8acbe3fd251a42, type: 3}
 --- !u!1001 &1481008055
 Prefab:
   m_ObjectHideFlags: 0
@@ -14321,6 +14466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 702328742}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -15074,6 +15220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1849257609}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -15283,6 +15430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1481875173}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -15506,7 +15654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57.408203, y: -23.800049}
+  m_AnchoredPosition: {x: -57.40625, y: -23.800049}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1608066000 stripped
@@ -16232,6 +16380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 552897774}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -16813,6 +16962,7 @@ Transform:
   m_Children:
   - {fileID: 971946754}
   - {fileID: 1031953295}
+  - {fileID: 1129825502}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17341,6 +17491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1418241131}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -17842,6 +17993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 83132914}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -18064,6 +18216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1303943834}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -18240,7 +18393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -121.40039, y: -23.800049}
+  m_AnchoredPosition: {x: -121.39844, y: -23.800049}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1913108459
@@ -18386,6 +18539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 509818858}
+  musicClip: {fileID: 0}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -19520,6 +19674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 493471658}
+  musicClip: {fileID: 0}
   minDecors: 15
   maxDecors: 40
   levelBounds:

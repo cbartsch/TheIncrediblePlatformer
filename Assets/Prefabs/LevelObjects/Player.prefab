@@ -28,6 +28,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1827192673305326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4996316361762714}
+  - component: {fileID: 114392277442225398}
+  m_Layer: 9
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1997784270113422
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,12 +83,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1026776410281114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.1, y: -0.8299999, z: 0}
+  m_LocalPosition: {x: -17.1, y: -0.8299999, z: -0.16796875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4161116480444016}
+  - {fileID: 4996316361762714}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4996316361762714
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827192673305326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4686782933503466}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50526747394103088
 Rigidbody2D:
@@ -151,6 +181,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114392277442225398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827192673305326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9c665888cc8d648a55c3c8fe707045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpClip: {fileID: 8300000, guid: 87d0a30f4e23b5f4f8b1854b4b365538, type: 3}
+  runClip: {fileID: 8300000, guid: 2e35cd27140a08d41a53428d175b122c, type: 3}
+  coinClip: {fileID: 8300000, guid: ea91d3700ff34494faf322fbf79ccad8, type: 3}
 --- !u!114 &114560506793394032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,6 +222,7 @@ MonoBehaviour:
   crouchTime: 0.1
   runDuration: 0.5
   spawnTime: 0.3
+  sounds: {fileID: 114392277442225398}
 --- !u!212 &212067350151655050
 SpriteRenderer:
   m_ObjectHideFlags: 1

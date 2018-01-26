@@ -16,6 +16,12 @@ public class Persistence : MonoBehaviour
         private set { PlayerPrefs.SetInt("WorldNum", value); PlayerPrefs.Save(); }
     }
 
+    public static bool SoundsEnabled
+    {
+        get { return PlayerPrefs.GetInt("SoundsEnabled", 1) != 0; }
+        set { PlayerPrefs.SetInt("SoundsEnabled", value ? 1 : 0); PlayerPrefs.Save(); }
+    }
+
     public static bool HasLevelData
     {
         get { return WorldNum > 0 || LevelNum > 0; }
