@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSounds : MonoBehaviour
+public class SoundEffects : MonoBehaviour
 {
     public AudioClip jumpClip;
     public AudioClip runClip;
     public AudioClip coinClip;
     public AudioClip dieClip;
     public AudioClip reachGoalClip;
+    public AudioClip resetLevelClip;
+    public AudioClip pauseClip;
+    public AudioClip resumeClip;
+    public AudioClip enableSoundsClip;
 
     void Update()
     {
@@ -46,12 +50,32 @@ public class PlayerSounds : MonoBehaviour
         playClip(reachGoalClip);
     }
 
+    public void PlayResetLevel()
+    {
+        playClip(resetLevelClip);
+    }
+
+    public void PlayPause()
+    {
+        playClip(pauseClip);
+    }
+
+    public void PlayResume()
+    {
+        playClip(resumeClip);
+    }
+
+    public void PlayEnableSounds()
+    {
+        playClip(enableSoundsClip);
+    }
+
     private void playClip(AudioClip clip)
     {
         if (Persistence.SoundsEnabled)
         {
             var src = gameObject.AddComponent<AudioSource>();
-            src.PlayOneShot(clip, 0.1f);
+            src.PlayOneShot(clip, 0.2f);
         }
     }
 }

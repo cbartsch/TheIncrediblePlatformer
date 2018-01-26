@@ -197,6 +197,10 @@ MonoBehaviour:
   coinClip: {fileID: 8300000, guid: ea91d3700ff34494faf322fbf79ccad8, type: 3}
   dieClip: {fileID: 8300000, guid: 0ecd1a2af45519649baa2cd79cf6b4cd, type: 3}
   reachGoalClip: {fileID: 8300000, guid: 2d6a324e88026954fa3145ba8a27f797, type: 3}
+  resetLevelClip: {fileID: 0}
+  pauseClip: {fileID: 0}
+  resumeClip: {fileID: 0}
+  enableSoundsClip: {fileID: 0}
 --- !u!114 &114560506793394032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,9 +221,9 @@ MonoBehaviour:
   spriteRenderer: {fileID: 212067350151655050}
   body: {fileID: 50526747394103088}
   feetCircleCollider: {fileID: 58584732749638094}
-  jumpForce: 21
-  walkForce: 17
-  runForce: 34
+  jumpForce: 27
+  walkForce: 20.4
+  runForce: 40.8
   drag: 2
   crouchTime: 0.1
   runDuration: 0.5
