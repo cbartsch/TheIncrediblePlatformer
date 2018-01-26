@@ -24,7 +24,7 @@ public class BackgroundMusic : MonoBehaviour
 	    var level = FindObjectOfType<Level>();
 	    var clip = (level && level.musicClip) ? level.musicClip : defaultMusicClip;
 
-	    if (clip != audioSource.clip)
+	    if (!audioSource.clip || (level && clip != audioSource.clip))
 	    {
             audioSource.Stop();
 	        audioSource.clip = clip;

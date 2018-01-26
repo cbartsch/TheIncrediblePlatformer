@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 820899963}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -932,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 179590121}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 544904455}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -2783,7 +2783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 916654111}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -5074,7 +5074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 815552261}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 15
   maxDecors: 40
   levelBounds:
@@ -6660,7 +6660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 449271965}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -8316,7 +8316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1015194415}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -8757,7 +8757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 85510052}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -8871,7 +8871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1752882164}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -9387,7 +9387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1265752744}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -10853,7 +10853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 523860015}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -11005,7 +11005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 872648386}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -13432,7 +13432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 897359705}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -13985,7 +13985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 681057882}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -14188,7 +14188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1555312530}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -14425,7 +14425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 702328742}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -15179,7 +15179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1849257609}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -15350,7 +15350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1592676434
 Transform:
   m_ObjectHideFlags: 0
@@ -15388,7 +15388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1481875173}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -16333,7 +16333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 552897774}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -17444,7 +17444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1418241131}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -17946,7 +17946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 83132914}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -18169,7 +18169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1303943834}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -18492,7 +18492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 509818858}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 10
   maxDecors: 20
   levelBounds:
@@ -19627,7 +19627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 493471658}
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   minDecors: 15
   maxDecors: 40
   levelBounds:
