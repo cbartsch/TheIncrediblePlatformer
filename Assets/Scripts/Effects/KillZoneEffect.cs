@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrollingSprite : MonoBehaviour
+public class KillZoneEffect : MonoBehaviour
 {
-    public Renderer renderer;
+    public new Renderer renderer;
     public float scrollTime = 1;
     public Vector2 offsetScale = new Vector2(1, 0);
 
