@@ -35,7 +35,7 @@ public class UiManager : MonoBehaviour
 
         pauseButtonImage.sprite = GameManager.Instance.Paused ? playSprite : pauseSprite;
 
-        var isMenuLevel = worldIndex == 1 && levelIndex == 1;
+        var isMenuLevel = worldIndex == 0 && levelIndex == 1;
 
         if (isMenuLevel)
         {
@@ -49,7 +49,7 @@ public class UiManager : MonoBehaviour
 
     public void ResetBtnPressed()
     {
-        var isMenuLevel = GameManager.Instance.WorldIndex == 0 && GameManager.Instance.LevelIndex == 0;
+        var isMenuLevel = GameManager.Instance.WorldIndex == -1 && GameManager.Instance.LevelIndex == 0;
         if (isMenuLevel)
         {
             Persistence.SoundsEnabled = !Persistence.SoundsEnabled;

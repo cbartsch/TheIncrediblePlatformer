@@ -216,6 +216,7 @@ public class Player : MonoBehaviour
         {
             numGroundContacts++;
             body.drag = GroundContact ? drag : 0;
+            body.simulated = !GroundContact || !crouching;
             if (willJump && GroundContact)
             {
                 DoJump();

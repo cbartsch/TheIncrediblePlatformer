@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - RunItem
   - ToolCamera
+  - KeyItem
   layers:
   - Default
   - TransparentFX

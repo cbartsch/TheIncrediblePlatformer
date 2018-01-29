@@ -6,13 +6,17 @@ public class Persistence : MonoBehaviour
 {
     public static int LevelNum
     {
-        get { return PlayerPrefs.GetInt("LevelIndex", 0); }
+        get
+        {
+            var index = PlayerPrefs.GetInt("LevelIndex", 0);
+            return Mathf.Min(GameManager.Instance.GetNumLevelsInWorld(WorldNum) - 1, index);
+        }
         private set { PlayerPrefs.SetInt("LevelIndex", value); PlayerPrefs.Save(); }
     }
 
     public static int WorldNum
     {
-        get { return PlayerPrefs.GetInt("WorldIndex", 0); }
+        get { return PlayerPrefs.GetInt("WorldIndex", -1); }
         private set { PlayerPrefs.SetInt("WorldIndex", value); PlayerPrefs.Save(); }
     }
 
@@ -39,6 +43,5 @@ public class Persistence : MonoBehaviour
             WorldNum = worldIndex;
             LevelNum = levelIndex;
         }
-
     }
 }

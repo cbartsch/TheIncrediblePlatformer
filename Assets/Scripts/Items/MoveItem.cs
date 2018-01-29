@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class MoveItem : MonoBehaviour {
+public class MoveItem : MonoBehaviour, Resettable.IResettable {
 
     public bool usePhysics = false;
 
@@ -59,9 +59,9 @@ public class MoveItem : MonoBehaviour {
         }
     }
 
-    private void Reset(bool resetDropPosition = false)
+    public void Reset(bool resetLevelPosition = false)
     {
-        if (resetDropPosition)
+        if (resetLevelPosition)
         {
             dropPosition = startPosition;
         }
@@ -81,15 +81,4 @@ public class MoveItem : MonoBehaviour {
         }
     }
 
-    public static void ResetAll(Level level, bool resetDropPosition = false)
-    {
-        if (!level)
-        {
-            return;
-        }
-        foreach (var c in level.GetComponentsInChildren<MoveItem>())
-        {
-            c.Reset(resetDropPosition);
-        }
-    }
 }

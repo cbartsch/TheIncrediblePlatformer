@@ -18,7 +18,7 @@ public class WorldStyle : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    var worldIndex = GameManager.Instance.WorldIndex;
+	    var worldIndex = Mathf.Max(GameManager.Instance.WorldIndex, 0);
 	    gameWorldBackground.sprite = gameWorldBackgroundSprites[worldIndex];
 	    gameCamera.backgroundColor = gameWorldBackgroundColors[worldIndex];
 	}

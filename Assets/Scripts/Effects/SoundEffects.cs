@@ -13,6 +13,7 @@ public class SoundEffects : MonoBehaviour
     public AudioClip pauseClip;
     public AudioClip resumeClip;
     public AudioClip enableSoundsClip;
+    public AudioClip keyClip;
 
     void Update()
     {
@@ -68,6 +69,11 @@ public class SoundEffects : MonoBehaviour
     public void PlayEnableSounds()
     {
         playClip(enableSoundsClip);
+    }
+
+    public void PlayKey()
+    {
+        playClip(keyClip);
     }
 
     private void playClip(AudioClip clip)

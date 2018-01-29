@@ -17,7 +17,7 @@ public class WorldItem : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        var worldIndex = GameManager.Instance.WorldIndex;
+        var worldIndex = Mathf.Max(GameManager.Instance.WorldIndex, 0);
         spriteRenderer.sprite = worldSprites[worldIndex];
     }
 }
