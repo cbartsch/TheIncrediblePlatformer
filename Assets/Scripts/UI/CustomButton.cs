@@ -9,12 +9,10 @@ public class CustomButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 
     public float pressOffset = 15;
 
-    private Button button;
     private float startY, startHeight;
     
 	void Start ()
 	{
-	    button = GetComponent<Button>();
 	    startY = transform.position.y;
 	    startHeight = (transform as RectTransform).sizeDelta.y;
 	}

@@ -33,6 +33,8 @@ public class Persistence : MonoBehaviour
 
     public static void LevelReached(int worldIndex, int levelIndex)
     {
+        Debug.Log("level reached: " + worldIndex + "/" + levelIndex);
+
         if (worldIndex == WorldNum)
         {
             if (levelIndex > LevelNum) LevelNum = levelIndex;

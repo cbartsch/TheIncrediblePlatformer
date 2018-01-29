@@ -201,6 +201,7 @@ MonoBehaviour:
   pauseClip: {fileID: 0}
   resumeClip: {fileID: 0}
   enableSoundsClip: {fileID: 0}
+  keyClip: {fileID: 0}
 --- !u!114 &114560506793394032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,7 +228,7 @@ MonoBehaviour:
   drag: 2
   crouchTime: 0.1
   runDuration: 0.5
-  spawnTime: 0.3
+  spawnTime: 0.5
   sounds: {fileID: 114392277442225398}
 --- !u!212 &212067350151655050
 SpriteRenderer:

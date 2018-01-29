@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WorldStyle : MonoBehaviour
 {
-    public Camera gameCamera;
     public SpriteRenderer gameWorldBackground;
 
     public List<Sprite> gameWorldBackgroundSprites;
@@ -20,6 +19,10 @@ public class WorldStyle : MonoBehaviour
 	{
 	    var worldIndex = Mathf.Max(GameManager.Instance.WorldIndex, 0);
 	    gameWorldBackground.sprite = gameWorldBackgroundSprites[worldIndex];
-	    gameCamera.backgroundColor = gameWorldBackgroundColors[worldIndex];
+
+	    foreach (var camera in FindObjectsOfType<Camera>())
+	    {
+	        camera.backgroundColor = gameWorldBackgroundColors[worldIndex];
+        }
 	}
 }
