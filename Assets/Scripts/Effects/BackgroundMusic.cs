@@ -10,8 +10,6 @@ public class BackgroundMusic : MonoBehaviour
 
     public float pausePitch = 0.5f;
     public float pitchSmoothTime = 3;
-    
-    private float pitchSmoothVelocity;
 
 	// Use this for initialization
 	void Start () {
@@ -33,10 +31,17 @@ public class BackgroundMusic : MonoBehaviour
 
 	    var paused = GameManager.Instance.Paused || DragController.DragActive;
 
-	    var pitch = paused ? pausePitch : 1;
-
-	    audioSource.pitch = Mathf.SmoothDamp(audioSource.pitch, pitch, ref pitchSmoothVelocity,
-	        pitchSmoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
+	    var targetPitch = paused ? pausePitch : 1;
+	    var diff = targetPitch - audioSource.pitch;
+	    var timeDiff = Mathf.Abs(1 - pausePitch) * Time.unscaledDeltaTime / pitchSmoothTime * Mathf.Sign(diff);
+	    if (timeDiff < Mathf.Abs(diff))
+	    {
+	        audioSource.pitch += timeDiff;
+	    }
+	    else
+	    {
+	        audioSource.pitch = targetPitch;
+	    }
 
 	    audioSource.enabled = Persistence.SoundsEnabled;
 	}

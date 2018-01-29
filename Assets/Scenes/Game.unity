@@ -2268,6 +2268,21 @@ Prefab:
       propertyPath: m_Offset.x
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 60492156055803394, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 60640683442745944, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 61121471834603672, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
   m_IsPrefabParent: 0
@@ -2719,7 +2734,7 @@ MonoBehaviour:
   audioSource: {fileID: 304795399}
   defaultMusicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
   pausePitch: 0.5
-  pitchSmoothTime: 1
+  pitchSmoothTime: 2
 --- !u!82 &304795399
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5554,6 +5569,21 @@ Prefab:
       propertyPath: m_Size.x
       value: 160
       objectReference: {fileID: 0}
+    - target: {fileID: 61121471834603672, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 60640683442745944, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 60492156055803394, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 130
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
   m_IsPrefabParent: 0
@@ -7317,17 +7347,17 @@ Prefab:
     - target: {fileID: 61121471834603672, guid: 5005a6d9015a8604ca1037ab56318da8,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 130
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 60492156055803394, guid: 5005a6d9015a8604ca1037ab56318da8,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 130
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 60640683442745944, guid: 5005a6d9015a8604ca1037ab56318da8,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 130
+      value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
@@ -15782,6 +15812,21 @@ Prefab:
         type: 2}
       propertyPath: m_Size.x
       value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 60640683442745944, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 61121471834603672, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 60492156055803394, guid: 5005a6d9015a8604ca1037ab56318da8,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
