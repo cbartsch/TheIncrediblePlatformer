@@ -246,8 +246,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: F:/Projects/android/certificates/impossibru.keystore
+  AndroidKeyaliasName: at.impossibru
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0
