@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
                 worldIndex++;
             }
 
-            if (worldIndex >= NumWorlds)
+            if (worldIndex + 1 >= NumWorlds)
             {
                 worldIndex = -1;
             }
