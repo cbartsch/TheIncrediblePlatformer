@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 60322583136733166}
   - component: {fileID: 60393465994183334}
   - component: {fileID: 114493794099191940}
+  - component: {fileID: 114378283934983584}
   m_Layer: 0
   m_Name: SoftPlatform
   m_TagString: Ground
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303126208255494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.83, y: -3.55, z: 1}
+  m_LocalPosition: {x: -27.19, y: -6.034, z: 0}
   m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -148,6 +149,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21, y: 11}
   m_EdgeRadius: 0
+--- !u!114 &114378283934983584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303126208255494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc6d3c4346a4fa459b943b6823b4884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 212269204436141240}
+  worldSprites:
+  - {fileID: 21300000, guid: baca6afaa0c50b246a7bd7ba47e8de95, type: 3}
+  - {fileID: 21300000, guid: 58b6105599a9cdb439689f2f2c04de5f, type: 3}
+  - {fileID: 21300000, guid: 58207bd243710d04ca7f0432edd188ca, type: 3}
 --- !u!114 &114493794099191940
 MonoBehaviour:
   m_ObjectHideFlags: 1

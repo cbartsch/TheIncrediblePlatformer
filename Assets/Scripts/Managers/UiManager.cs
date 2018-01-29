@@ -25,14 +25,17 @@ public class UiManager : MonoBehaviour
 
     void Update()
     {
+        var worldIndex = GameManager.Instance.WorldIndex + 1;
+        var levelIndex = GameManager.Instance.LevelIndex + 1;
+
         //update level numbers
-        worldNum.sprite = digitSprites[GameManager.Instance.WorldNum % 10];
-        levelNum1.sprite = digitSprites[(GameManager.Instance.LevelNum / 10) % 10];
-        levelNum2.sprite = digitSprites[GameManager.Instance.LevelNum % 10];
+        worldNum.sprite = digitSprites[worldIndex % 10];
+        levelNum1.sprite = digitSprites[(levelIndex / 10) % 10];
+        levelNum2.sprite = digitSprites[levelIndex % 10];
 
         pauseButtonImage.sprite = GameManager.Instance.Paused ? playSprite : pauseSprite;
 
-        var isMenuLevel = GameManager.Instance.WorldNum == 1 && GameManager.Instance.LevelNum == 1;
+        var isMenuLevel = worldIndex == 1 && levelIndex == 1;
 
         if (isMenuLevel)
         {
@@ -46,7 +49,7 @@ public class UiManager : MonoBehaviour
 
     public void ResetBtnPressed()
     {
-        var isMenuLevel = GameManager.Instance.WorldNum == 1 && GameManager.Instance.LevelNum == 1;
+        var isMenuLevel = GameManager.Instance.WorldIndex == 0 && GameManager.Instance.LevelIndex == 0;
         if (isMenuLevel)
         {
             Persistence.SoundsEnabled = !Persistence.SoundsEnabled;

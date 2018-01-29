@@ -37,13 +37,13 @@ public class GameAnalytics : MonoBehaviour
     {
         LogEvent("LevelFinished", new Dictionary<string, object>
         {
-            {"WorldNum", worldNum},
-            {"LevelNum", levelNum},
+            {"WorldIndex", worldNum + 1},
+            {"LevelIndex", levelNum + 1},
             {"Time", timeDiff.TotalMilliseconds}
         });
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-        JS_LevelFinished(worldNum, levelNum);
+        JS_LevelFinished(worldNum + 1, levelNum + 1);
 #endif
     }
 

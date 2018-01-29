@@ -21,8 +21,13 @@ public class GameManager : MonoBehaviour
     public Level level { get; private set; }
 
     private bool spawningPlayers = false;
+
+    //the annotations make the fields be visible in the editor, for testing
+    [SerializeField]
     private int levelIndex = 0;
+    [SerializeField]
     private int worldIndex = 0;
+
     private int activePlayers = 0;
     private DateTime levelStartTime;
 
@@ -30,8 +35,8 @@ public class GameManager : MonoBehaviour
 
     private bool wasPaused;
 
-    public int WorldNum { get { return worldIndex + 1; } }
-    public int LevelNum { get { return levelIndex + 1; } }
+    public int WorldIndex { get { return worldIndex; } }
+    public int LevelIndex { get { return levelIndex; } }
 
     private int NumWorlds { get { return levelContainer.transform.childCount; } }
     private int NumLevelsInWorld { get { return levelContainer.transform.GetChild(worldIndex).childCount; } }
@@ -109,7 +114,7 @@ public class GameManager : MonoBehaviour
     private void LevelFinished(bool isContinueGoal = false)
     {
         var timeDiff = DateTime.Now - levelStartTime;
-        GameAnalytics.Instance.LevelFinished(WorldNum, LevelNum, timeDiff);
+        GameAnalytics.Instance.LevelFinished(WorldIndex, LevelIndex, timeDiff);
 
         DestroyLevel();
 

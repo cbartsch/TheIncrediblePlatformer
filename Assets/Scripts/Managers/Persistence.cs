@@ -6,14 +6,14 @@ public class Persistence : MonoBehaviour
 {
     public static int LevelNum
     {
-        get { return PlayerPrefs.GetInt("LevelNum", 0); }
-        private set { PlayerPrefs.SetInt("LevelNum", value); PlayerPrefs.Save(); }
+        get { return PlayerPrefs.GetInt("LevelIndex", 0); }
+        private set { PlayerPrefs.SetInt("LevelIndex", value); PlayerPrefs.Save(); }
     }
 
     public static int WorldNum
     {
-        get { return PlayerPrefs.GetInt("WorldNum", 0); }
-        private set { PlayerPrefs.SetInt("WorldNum", value); PlayerPrefs.Save(); }
+        get { return PlayerPrefs.GetInt("WorldIndex", 0); }
+        private set { PlayerPrefs.SetInt("WorldIndex", value); PlayerPrefs.Save(); }
     }
 
     public static bool SoundsEnabled
