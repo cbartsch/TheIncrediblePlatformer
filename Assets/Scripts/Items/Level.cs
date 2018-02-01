@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Level : MonoBehaviour {
@@ -16,7 +17,11 @@ public class Level : MonoBehaviour {
         );
     
     public List<Player.Data> playerData = new List<Player.Data> { new Player.Data { type = 0 } };
-    
+    public int GoalPlayerCount
+    {
+        get { return playerData.Count(d => d.IsGoalPlayer); }
+    }
+
     void Start () {
         LevelDecorator.Instance.Decorate(this);
 	}

@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         if (players.Length == 0 && !spawningPlayers && !isPaused)
         {
             Resettable.ResetAll(level);
-            activePlayers = level.playerData.Count;
+            activePlayers = level.GoalPlayerCount;
             spawningPlayers = true;
 
             spawnRoutine = StartCoroutine(SpawnPlayers());
@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
 
         activePlayers--;
 
+        Debug.Log("goal reached, active players:" + activePlayers);
         if (activePlayers == 0)
         {
             LevelFinished(isContinueGoal:isContinueGoal);
@@ -183,7 +184,7 @@ public class GameManager : MonoBehaviour
             spawningPlayers = false;
         }
 
-        activePlayers = level.playerData.Count;
+        activePlayers = level.GoalPlayerCount;
 
         foreach (var player in level.GetComponentsInChildren<Player>())
         {

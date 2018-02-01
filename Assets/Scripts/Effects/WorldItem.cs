@@ -10,13 +10,12 @@ public class WorldItem : MonoBehaviour {
 
     void Awake()
     {
-        applySprite();
     }
 
     // Use this for initialization
     void Start()
     {
-
+        applySprite();
     }
 
     // Update is called once per frame

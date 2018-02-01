@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public class Data
     {
         public int type;
+
+        public bool IsGoalPlayer { get { return type >= 0; } }
     }
 
     [Serializable]
@@ -70,7 +72,7 @@ public class Player : MonoBehaviour
         var c = spriteRenderer.color;
         c.a = 0;
         spriteRenderer.color = c;
-        spriteRenderer.sprite = typeVisuals[PlayerData.type].startSprite;
+        spriteRenderer.sprite = typeVisuals[PlayerData.type + 1].startSprite;
         animator.enabled = false;
     }
 
@@ -111,7 +113,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        animator.runtimeAnimatorController = typeVisuals[PlayerData.type].animator;
+        animator.runtimeAnimatorController = typeVisuals[PlayerData.type + 1].animator;
 
         flipped = false;
 
