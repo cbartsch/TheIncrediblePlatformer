@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public float respawnTime = 1;
     public float spawnInterval = 1;
+    public float spawnStartTime = 0.5f;
 
     public Level level { get; private set; }
 
@@ -88,6 +89,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnPlayers()
     {
+        yield return new WaitForSeconds(spawnStartTime);
+
         foreach (var data in level.playerData)
         {
             var player = Instantiate(playerPrefab, level.spawnPoint.transform.position, Quaternion.identity, level.transform);

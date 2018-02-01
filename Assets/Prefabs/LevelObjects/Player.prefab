@@ -230,7 +230,7 @@ MonoBehaviour:
   drag: 2
   crouchTime: 0.1
   runDuration: 0.5
-  spawnTime: 0.5
+  spawnTime: 0.25
   sounds: {fileID: 114392277442225398}
 --- !u!212 &212067350151655050
 SpriteRenderer:

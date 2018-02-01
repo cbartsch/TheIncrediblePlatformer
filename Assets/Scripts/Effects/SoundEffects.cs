@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SoundEffects : MonoBehaviour
@@ -14,6 +15,11 @@ public class SoundEffects : MonoBehaviour
     public AudioClip resumeClip;
     public AudioClip enableSoundsClip;
     public AudioClip keyClip;
+
+    public bool Playing
+    {
+        get { return GetComponents<AudioSource>().Any(s => s.isPlaying); }
+    }
 
     void Update()
     {

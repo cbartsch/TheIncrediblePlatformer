@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, PhysicsManager.PhysicsBehavior
 {
     //when walking slower than this, player turns around
     private const float MIN_WALK_VELOCITY = 0.8f;
@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        PhysicsManager.Instance.RegisterPhysicsBehavior(this);
         startScale = transform.localScale;
         spawning = true;
         var c = spriteRenderer.color;
@@ -97,10 +98,9 @@ public class Player : MonoBehaviour
         {
             Color c = spriteRenderer.color;
             c.a -= Time.deltaTime / spawnTime;
-            if (c.a <= 0)
+            if (c.a <= 0 && !sounds.Playing)
             {
                 c.a = 0;
-                Despawning = false;
 
                 if (hasReachedGoal && GoalReached != null)
                 {
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("YVel", body.velocity.y);
     }
 
-    void FixedUpdate()
+    public void PhysicsUpdate()
     {
         if (GroundContact)
         {
@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
                 break;
         }
         float force = running ? runForce : walkForce;
-        body.AddForce(Vector2.right * force * forceFactor * Time.deltaTime * PhysicsManager.UPDATES_PER_SECOND);
+        body.AddForce(Vector2.right * force * forceFactor);
     }
 
     public void Jump()
