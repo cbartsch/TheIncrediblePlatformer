@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 4161116480444016}
   - component: {fileID: 212067350151655050}
   - component: {fileID: 95973670700035150}
-  - component: {fileID: 61612840693326024}
   - component: {fileID: 58584732749638094}
   m_Layer: 9
   m_Name: Visual
@@ -139,31 +138,6 @@ CircleCollider2D:
   m_Offset: {x: 10.5, y: 10.5}
   serializedVersion: 2
   m_Radius: 10.5
---- !u!61 &61612840693326024
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1997784270113422}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 10.5, y: 15.29846}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 21, y: 21}
-    newSize: {x: 0.16, y: 0.29}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 1
-  serializedVersion: 2
-  m_Size: {x: 21, y: 11.40308}
-  m_EdgeRadius: 0
 --- !u!95 &95973670700035150
 Animator:
   serializedVersion: 3
@@ -173,7 +147,7 @@ Animator:
   m_GameObject: {fileID: 1997784270113422}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5fb8d0c5c4a902047bac509dcf57262a, type: 2}
+  m_Controller: {fileID: 9100000, guid: bffe2f09f8c51a2449d63eec35d5f5e8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

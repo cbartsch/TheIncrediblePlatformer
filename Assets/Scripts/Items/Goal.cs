@@ -37,7 +37,7 @@ public class Goal : MonoBehaviour, Resettable.IResettable
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         Player player;
         if (other.tag == "Player" && other.isActiveAndEnabled && !IsClosed &&

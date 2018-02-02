@@ -36,7 +36,12 @@ public class PhysicsManager : MonoBehaviour
     {
         physicsBehaviors.Add(behavior);
     }
-    
+
+    public void UnregisterPhysicsBehavior(PhysicsBehavior behavior)
+    {
+        physicsBehaviors.Remove(behavior);
+    }
+
     void Update()
     {
         remainingTime -= Time.deltaTime;

@@ -27,9 +27,12 @@ public class LevelDecorator : MonoBehaviour
         var decorPrefab = decorPrefabs[Random.Range(0, decorPrefabs.Count)];
         var bounds = level.levelBounds;
 
+        //only spawn in top part of level as bottom half has "mountain" background
+        var minY = bounds.min.y + bounds.size.y * 0.3f;
+
         var pos = new Vector3(
             Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(bounds.min.y, bounds.max.y),
+            Random.Range(        minY, bounds.max.y),
             Random.Range(bounds.min.z, bounds.max.z)
             );
 

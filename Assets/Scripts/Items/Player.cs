@@ -77,6 +77,11 @@ public class Player : MonoBehaviour, PhysicsManager.PhysicsBehavior
         animator.enabled = false;
     }
 
+    void OnDestroy()
+    {
+        PhysicsManager.Instance.UnregisterPhysicsBehavior(this);
+    }
+
     void Update()
     {
         var enabled = !spawning && !Despawning;

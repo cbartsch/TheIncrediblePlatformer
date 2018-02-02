@@ -21,11 +21,9 @@ GameObject:
   - component: {fileID: 4203627450219000}
   - component: {fileID: 212269204436141240}
   - component: {fileID: 50260269378321874}
-  - component: {fileID: 61435470261917062}
-  - component: {fileID: 60322583136733166}
-  - component: {fileID: 60393465994183334}
   - component: {fileID: 114493794099191940}
   - component: {fileID: 114378283934983584}
+  - component: {fileID: 61648834651472718}
   m_Layer: 0
   m_Name: SoftPlatform
   m_TagString: Ground
@@ -40,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303126208255494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.19, y: -6.034, z: 0}
+  m_LocalPosition: {x: -2.65, y: -4.84, z: 1}
   m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,65 +64,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60322583136733166
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1303126208255494}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 21, y: 0, z: 21, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 63, y: 21}
-    newSize: {x: 63, y: 21}
-    adaptiveTilingThreshold: 1
-    drawMode: 2
-    adaptiveTiling: 1
-  m_AutoTiling: 1
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 12}
-      - {x: 8.975334, y: 10}
-      - {x: 21, y: 10}
-      - {x: 21, y: 21}
-      - {x: 0, y: 21}
---- !u!60 &60393465994183334
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1303126208255494}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 21, y: 0, z: 21, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 63, y: 21}
-    newSize: {x: 63, y: 21}
-    adaptiveTilingThreshold: 1
-    drawMode: 2
-    adaptiveTiling: 1
-  m_AutoTiling: 1
-  m_Points:
-    m_Paths:
-    - - {x: 42, y: 10}
-      - {x: 52.766037, y: 10}
-      - {x: 62.999992, y: 12}
-      - {x: 63, y: 21}
-      - {x: 42, y: 21}
---- !u!61 &61435470261917062
+--- !u!61 &61648834651472718
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -134,20 +74,20 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 31.5, y: 15.5}
+  m_Offset: {x: 31.5, y: 20.5}
   m_SpriteTilingProperty:
     border: {x: 21, y: 0, z: 21, w: 0}
     pivot: {x: 0, y: 0}
     oldSize: {x: 63, y: 21}
-    newSize: {x: 63, y: 21}
+    newSize: {x: 200, y: 21}
     adaptiveTilingThreshold: 1
     drawMode: 2
     adaptiveTiling: 1
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 21, y: 11}
+  m_Size: {x: 63, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &114378283934983584
 MonoBehaviour:
@@ -215,7 +155,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 63, y: 21}
+  m_Size: {x: 200, y: 21}
   m_AdaptiveModeThreshold: 1
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
