@@ -32,7 +32,7 @@ public class ToolCameraController : MonoBehaviour
         get
         {
             var origin = transform.position;
-            var size = new Vector2(GameCameraController.SCREEN_WIDTH, camera.orthographicSize);
+            var size = new Vector2(GameCameraController.SCREEN_WIDTH * 2, camera.orthographicSize);
             var hit = Physics2D.BoxCast(origin, size, 0, Vector2.zero, 0);
             return hit.collider != null;
         }

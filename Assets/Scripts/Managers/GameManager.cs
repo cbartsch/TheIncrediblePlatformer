@@ -125,11 +125,12 @@ public class GameManager : MonoBehaviour
                 LevelFinished(isContinueGoal: reason == Player.RemoveReason.ContinueGoalReached);
             }
         }
-        else if(reason == Player.RemoveReason.Died)
+
+        if (reason == Player.RemoveReason.GoalReached || reason == Player.RemoveReason.Died)
         {
-            var players = FindObjectsOfType<Player>();
-            if (players.Count(p => p.isActiveAndEnabled) == 0 && !wasPaused)
+            if (activePlayers > 0 && !Paused && FindObjectsOfType<Player>().Count(p => p.isActiveAndEnabled) == 0)
             {
+                //all players inactive but not all in goal
                 Paused = !ToolCameraController.Instance.HasMoveItems;
             }
         }
