@@ -10,6 +10,11 @@ public class GameCameraController : MonoBehaviour
     //cameras are configured to display this height of the world
     public const float SCREEN_HEIGHT = 10;
 
+    public static float SCREEN_WIDTH
+    {
+        get { return (float) Screen.width / Screen.height * GameCameraController.SCREEN_HEIGHT; }
+    }
+
     private new Camera camera;
 
     private Vector3 lastDragPos;

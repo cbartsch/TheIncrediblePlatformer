@@ -8,6 +8,11 @@ public class Player : MonoBehaviour, PhysicsManager.PhysicsBehavior
     //when walking slower than this, player turns around
     private const float MIN_WALK_VELOCITY = 0.8f;
 
+    public enum RemoveReason
+    {
+        GoalReached, ContinueGoalReached, Died, Other
+    }
+
     [Serializable]
     public class Data
     {
@@ -44,7 +49,7 @@ public class Player : MonoBehaviour, PhysicsManager.PhysicsBehavior
     public SoundEffects sounds;
 
     //called after despawn animation
-    public event Action<bool> GoalReached;
+    public event Action<RemoveReason> Removed;
 
     enum State { Idle, WalkRight, WalkLeft };
 
@@ -57,8 +62,7 @@ public class Player : MonoBehaviour, PhysicsManager.PhysicsBehavior
     private bool willJump = false;
     private bool running = false;
     private bool spawning = false;
-    private bool hasReachedGoal = false;
-    private bool hasReachedContinueGoal = false;
+    private RemoveReason removeReason;
     public bool Despawning { get; private set; }
 
     private bool GroundContact { get { return numGroundContacts > 0; } }
@@ -107,12 +111,12 @@ public class Player : MonoBehaviour, PhysicsManager.PhysicsBehavior
             {
                 c.a = 0;
 
-                if (hasReachedGoal && GoalReached != null)
-                {
-                    this.GoalReached(hasReachedContinueGoal);
-                }
-
                 Destroy(gameObject);
+
+                if (Removed != null)
+                {
+                    this.Removed(removeReason);
+                }
             }
             spriteRenderer.color = c;
             return;
@@ -310,8 +314,15 @@ public class Player : MonoBehaviour, PhysicsManager.PhysicsBehavior
         Despawning = true;
         if (hasReachedGoal)
         {
-            this.hasReachedGoal = true;
-            this.hasReachedContinueGoal = isContinueGoal;
+            removeReason = isContinueGoal ? RemoveReason.ContinueGoalReached : RemoveReason.GoalReached;
+        }
+        else if(didDie)
+        {
+            removeReason = RemoveReason.Died;
+        }
+        else
+        {
+            removeReason = RemoveReason.Other;
         }
     }
 }

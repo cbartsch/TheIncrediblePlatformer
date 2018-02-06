@@ -43,6 +43,6 @@ public class BackgroundMusic : MonoBehaviour
 	        audioSource.pitch = targetPitch;
 	    }
 
-	    audioSource.enabled = Persistence.SoundsEnabled;
+	    audioSource.enabled = Persistence.MusicEnabled;
 	}
 }

@@ -13,9 +13,10 @@ public class UiManager : MonoBehaviour
 
     public Sprite pauseSprite, playSprite;
 
-    public Image pauseButtonIcon, resetButtonIcon;
+    public Button soundsButton, musicButton;
+    public Image pauseButtonIcon, resetButtonIcon, musicButtonIcon, soundsButtonIcon;
 
-    public Sprite resetSprite, soundsOnSprite, soundsOffSprite;
+    public Sprite resetSprite, soundsOnSprite, soundsOffSprite, musicOnSprite, musicOffSprite;
 
     public SoundEffects sounds;
 
@@ -34,35 +35,36 @@ public class UiManager : MonoBehaviour
         levelNum2.sprite = digitSprites[levelIndex % 10];
 
         pauseButtonImage.sprite = GameManager.Instance.Paused ? playSprite : pauseSprite;
+        soundsButtonIcon.sprite = Persistence.SoundsEnabled ? soundsOnSprite : soundsOffSprite;
+        musicButtonIcon.sprite = Persistence.MusicEnabled ? musicOnSprite : musicOffSprite;
 
-        var isMenuLevel = worldIndex == 0 && levelIndex == 1;
+        var isMenuLevel = worldIndex == 0;
+        soundsButton.gameObject.SetActive(isMenuLevel);
+        musicButton.gameObject.SetActive(isMenuLevel);
+    }
 
-        if (isMenuLevel)
+    public void SoundsBtnPressed()
+    {
+        Persistence.SoundsEnabled = !Persistence.SoundsEnabled;
+        if (Persistence.SoundsEnabled)
         {
-            resetButtonIcon.sprite = Persistence.SoundsEnabled ? soundsOnSprite : soundsOffSprite;
+            sounds.PlayEnableSounds();
         }
-        else
+    }
+
+    public void MusicBtnPressed()
+    {
+        Persistence.MusicEnabled = !Persistence.MusicEnabled;
+        if (Persistence.MusicEnabled)
         {
-            resetButtonIcon.sprite = resetSprite;
+            sounds.PlayEnableSounds();
         }
     }
 
     public void ResetBtnPressed()
     {
-        var isMenuLevel = GameManager.Instance.WorldIndex == -1 && GameManager.Instance.LevelIndex == 0;
-        if (isMenuLevel)
-        {
-            Persistence.SoundsEnabled = !Persistence.SoundsEnabled;
-            if (Persistence.SoundsEnabled)
-            {
-                sounds.PlayEnableSounds();
-            }
-        }
-        else
-        {
-            GameManager.Instance.ResetLevel();
-            sounds.PlayResetLevel();
-        }
+        GameManager.Instance.ResetLevel();
+        sounds.PlayResetLevel();
     }
 
     public void PauseBtnPressed()

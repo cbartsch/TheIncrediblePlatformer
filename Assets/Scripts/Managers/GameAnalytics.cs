@@ -9,6 +9,8 @@ public class GameAnalytics : MonoBehaviour
 {
     public static GameAnalytics Instance { get; private set; }
 
+    public GoogleAnalyticsV4 ga;
+
 #if UNITY_WEBGL
     [DllImport("__Internal")]
     private static extern void JS_LevelFinished(int worldIndex, int levelIndex);
@@ -22,10 +24,12 @@ public class GameAnalytics : MonoBehaviour
         amplitude.logging = true;
         amplitude.init("451e76614d15535b86777ebd2bf87125");
 
-        Amplitude.Instance.logEvent("StartGame");
+        LogEvent("StartGame", null);
 
         Analytics.enabled = true;
         Analytics.deviceStatsEnabled = true;
+
+        ga.LogEvent("general", "StartGame", "", 0);
     }
     
     void Update()
@@ -41,6 +45,8 @@ public class GameAnalytics : MonoBehaviour
             {"LevelIndex", levelNum + 1},
             {"Time", timeDiff.TotalMilliseconds}
         });
+
+        ga.LogEvent("general", "LevelFinished_" + (worldNum + 1) + "_" + (levelNum + 1), "", (long)timeDiff.TotalMilliseconds);
 
 #if UNITY_WEBGL && !UNITY_EDITOR
         JS_LevelFinished(worldNum + 1, levelNum + 1);

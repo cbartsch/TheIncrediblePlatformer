@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -96,7 +97,7 @@ public class GameManager : MonoBehaviour
             var player = Instantiate(playerPrefab, level.spawnPoint.transform.position, Quaternion.identity, level.transform);
             var playerC = player.GetComponent<Player>();
 
-            playerC.GoalReached += GoalReached;
+            playerC.Removed += PlayerRemoved;
             playerC.PlayerData = data;
             playerC.Level = level;
 
@@ -107,16 +108,30 @@ public class GameManager : MonoBehaviour
         spawnRoutine = null;
     }
 
-    public void GoalReached(bool isContinueGoal)
+    public void PlayerRemoved(Player.RemoveReason reason)
     {
-        if (!level) { return; }
-
-        activePlayers--;
-
-        Debug.Log("goal reached, active players:" + activePlayers);
-        if (activePlayers == 0)
+        if (reason == Player.RemoveReason.GoalReached || reason == Player.RemoveReason.ContinueGoalReached)
         {
-            LevelFinished(isContinueGoal:isContinueGoal);
+            if (!level)
+            {
+                return;
+            }
+
+            activePlayers--;
+
+            Debug.Log("goal reached, active players:" + activePlayers);
+            if (activePlayers == 0)
+            {
+                LevelFinished(isContinueGoal: reason == Player.RemoveReason.ContinueGoalReached);
+            }
+        }
+        else if(reason == Player.RemoveReason.Died)
+        {
+            var players = FindObjectsOfType<Player>();
+            if (players.Count(p => p.isActiveAndEnabled) == 0 && !wasPaused)
+            {
+                Paused = !ToolCameraController.Instance.HasMoveItems;
+            }
         }
     }
 

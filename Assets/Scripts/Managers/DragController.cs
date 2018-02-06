@@ -25,7 +25,15 @@ public class DragController : MonoBehaviour
     private Vector3 touchPivot;
 
     private Vector3 Center { get { return moveAreaCollider.bounds.center; } }
-    
+
+    private Vector3 Bottom
+    {
+        get
+        {
+            return Center - moveAreaCollider.bounds.extents.y * Vector3.up;
+        }
+    }
+
     void Start()
     {
         //attach crosshair to make drag area visible
@@ -73,8 +81,8 @@ public class DragController : MonoBehaviour
             DragActive = true;
             DragObject = gameObject;
 
-            //on touch screen, move center; with mouse, move exact click point
-            touchPivot = transform.position - (InputManager.HasTouchScreenTouch ? Center : touchPosWorld);
+            //on touch screen, move bottom; with mouse, move exact click point
+            touchPivot = transform.position - (InputManager.HasTouchScreenTouch ? Bottom : touchPosWorld);
         }
         if (Dragging && !InputManager.HasTouch)
         {

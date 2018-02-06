@@ -7,7 +7,7 @@ using UnityEngine;
 public static class InputManager
 {
     //amount of inches to drag object above finger on touch screens
-    private const float TOUCH_DRAG_OFFSET = 40f / 160f;
+    private const float TOUCH_DRAG_OFFSET = 20f / 160f;
 
     public static bool HasTouchScreenTouch { get { return Input.touchCount > 0; } }
     public static bool HasMouseClick { get { return !HasTouchScreenTouch && Input.GetMouseButton(0); } }
