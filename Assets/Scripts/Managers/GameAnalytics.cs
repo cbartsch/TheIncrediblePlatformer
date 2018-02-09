@@ -23,6 +23,8 @@ public class GameAnalytics : MonoBehaviour
         Analytics.enabled = true;
         Analytics.deviceStatsEnabled = true;
 
+        ga.LogScreen("Main");
+
         LogEvent("StartGame", null);
         ga.LogEvent("general", "StartGame", "", 0);
     }
