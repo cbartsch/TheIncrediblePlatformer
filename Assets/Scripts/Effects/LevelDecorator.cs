@@ -29,10 +29,12 @@ public class LevelDecorator : MonoBehaviour
 
         //only spawn in top part of level as bottom half has "mountain" background
         var minY = bounds.min.y + bounds.size.y * 0.3f;
+        //can also be a bit on top of level
+        var maxY = bounds.max.y + bounds.size.y * 0.4f;
 
         var pos = new Vector3(
             Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(        minY, bounds.max.y),
+            Random.Range(        minY,         maxY),
             Random.Range(bounds.min.z, bounds.max.z)
             );
 

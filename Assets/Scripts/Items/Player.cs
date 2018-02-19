@@ -299,6 +299,11 @@ public class Player : MonoBehaviour, PhysicsManager.PhysicsBehavior
 
     public void Remove(bool hasReachedGoal = false, bool isContinueGoal = false, bool didDie = false)
     {
+        if (Despawning)
+        {
+            return;
+        }
+
         if (didDie)
         {
             sounds.PlayDie();

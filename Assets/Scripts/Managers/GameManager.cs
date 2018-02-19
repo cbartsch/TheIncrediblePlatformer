@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerPrefab;
 
-    public GameObject levelContainer;
+    public GameObject levelTemplatesContainer, levelContainer;
 
     public float respawnTime = 1;
     public float spawnInterval = 1;
@@ -40,12 +40,12 @@ public class GameManager : MonoBehaviour
     public int WorldIndex { get { return worldIndex; } }
     public int LevelIndex { get { return levelIndex; } }
 
-    private int NumWorlds { get { return levelContainer.transform.childCount; } }
+    private int NumWorlds { get { return levelTemplatesContainer.transform.childCount; } }
     private int NumLevelsInWorld { get { return GetNumLevelsInWorld(this.worldIndex); } }
 
     public int GetNumLevelsInWorld(int index)
     {
-        return levelContainer.transform.GetChild(index + 1).childCount;
+        return levelTemplatesContainer.transform.GetChild(index + 1).childCount;
     }
 
     public bool Paused { get; set; }
@@ -168,9 +168,9 @@ public class GameManager : MonoBehaviour
 
     private void CreateLevel()
     {
-        var world = levelContainer.transform.GetChild(this.worldIndex + 1);
+        var world = levelTemplatesContainer.transform.GetChild(this.worldIndex + 1);
         var levelTemplate = world.transform.GetChild(this.levelIndex);
-        this.level = Instantiate(levelTemplate.gameObject).GetComponent<Level>();
+        this.level = Instantiate(levelTemplate.gameObject, levelContainer.transform).GetComponent<Level>();
         this.level.gameObject.SetActive(true);
         levelStartTime = DateTime.Now;
     }

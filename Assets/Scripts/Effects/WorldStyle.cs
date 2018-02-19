@@ -8,6 +8,7 @@ public class WorldStyle : MonoBehaviour
 
     public List<Sprite> gameWorldBackgroundSprites;
     public List<Color> gameWorldBackgroundColors;
+    public List<Color> gameWorldBottomBackgroundColors;
 
     // Use this for initialization
     void Start () {
@@ -24,5 +25,7 @@ public class WorldStyle : MonoBehaviour
 	    {
 	        camera.backgroundColor = gameWorldBackgroundColors[worldIndex];
         }
+
+	    GameCameraController.Instance.bottomBackgroundSprite.color = gameWorldBottomBackgroundColors[worldIndex];
 	}
 }

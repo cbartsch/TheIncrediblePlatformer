@@ -23,10 +23,21 @@ public class GameAnalytics : MonoBehaviour
         Analytics.enabled = true;
         Analytics.deviceStatsEnabled = true;
 
+        ga.StartSession();
+
         ga.LogScreen("Main");
 
         LogEvent("StartGame", null);
         ga.LogEvent("general", "StartGame", "", 0);
+    }
+
+    void OnDestroy()
+    {
+#if UNITY_EDITOR
+        return;
+#endif
+
+        ga.StopSession();
     }
 
     void Update()

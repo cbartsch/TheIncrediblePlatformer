@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -137,7 +138,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 18664875}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 820899964}
@@ -169,8 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 820899963}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -618,7 +619,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 45738431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 278187617}
@@ -655,8 +656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 278187616}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -953,7 +954,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 74084566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 30880348}
@@ -983,8 +984,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 30880347}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -1023,7 +1024,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 79318422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 557.1871, y: -225, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1725864653}
@@ -1531,7 +1532,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 104700478}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 179590122}
@@ -1558,8 +1559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 179590121}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -1638,7 +1639,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 111983893}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 432.18707, y: -225, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.99999744, y: 0.99999744, z: 0.99999744}
   m_Children:
   - {fileID: 1003478560}
@@ -1877,17 +1878,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 160
+      value: 145.93544
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 160
+      value: 145.93544
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 160
+      value: 145.93544
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -1994,7 +1995,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.64
+      value: -5.92
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2467,7 +2468,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.45
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2634,7 +2635,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -2644,7 +2645,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -2654,7 +2655,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -3642,8 +3643,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 544904455}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -4046,8 +4047,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 916654111}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -4175,7 +4176,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -4185,7 +4186,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -4195,7 +4196,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -4856,11 +4857,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.98
+      value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12.84
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5227,7 +5228,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 377092410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 644904325}
@@ -5262,8 +5263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 644904324}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -5334,17 +5335,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 144.66246
+      value: 176.12386
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 144.66246
+      value: 176.12386
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 144.66246
+      value: 176.12386
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -5477,7 +5478,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5837,17 +5838,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 200.01465
+      value: 247.0425
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 200.01465
+      value: 247.0425
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 200.01465
+      value: 247.0425
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -5911,11 +5912,21 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 63
+      value: 114.62895
       objectReference: {fileID: 0}
     - target: {fileID: 4486977096374550, guid: 407196644830e5947974b08a9af60155, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 114.62895
+      objectReference: {fileID: 0}
+    - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 114.62895
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -6553,7 +6564,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 465890199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 546633421}
@@ -6579,8 +6590,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1327675377}
   musicClip: {fileID: 8300000, guid: 3fdfd7a7e14705e41b960c716c2c356e, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -7357,7 +7368,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 90.31899
       objectReference: {fileID: 0}
     - target: {fileID: 1740439627733658, guid: 407196644830e5947974b08a9af60155, type: 2}
       propertyPath: m_Layer
@@ -7382,12 +7393,12 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 90.31899
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 90.31899
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -7422,7 +7433,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 504918820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 815552262}
@@ -7457,8 +7468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 815552261}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 10
-  maxDecors: 20
+  minDecors: 15
+  maxDecors: 25
   levelBounds:
     m_Center: {x: 12.5, y: 2.5, z: 0}
     m_Extent: {x: 30, y: 7.5, z: 0}
@@ -7478,7 +7489,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.04
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7732,7 +7743,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 521637192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1142112327}
@@ -7760,8 +7771,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1142112326}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -7961,7 +7972,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.8799987
+      value: 4.91
       objectReference: {fileID: 0}
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7969,7 +7980,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8095,7 +8106,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 541493878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1984020934}
@@ -8121,8 +8132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1984020933}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -8420,7 +8431,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 554729499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1754548982}
@@ -8447,8 +8458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1754548981}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -8714,17 +8725,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 64
+      value: 115.98587
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 64
+      value: 115.98587
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 64
+      value: 115.98587
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -9093,6 +9104,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -9367,7 +9379,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -9377,7 +9389,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -9387,7 +9399,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -9433,7 +9445,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.13
+      value: -4.24
       objectReference: {fileID: 0}
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9525,7 +9537,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 160
+      value: 175.0795
       objectReference: {fileID: 0}
     - target: {fileID: 4486977096374550, guid: 407196644830e5947974b08a9af60155, type: 2}
       propertyPath: m_LocalScale.y
@@ -9534,12 +9546,12 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 160
+      value: 175.0795
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 160
+      value: 175.0795
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -9682,11 +9694,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.870001
+      value: -6.65
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -13.55
+      value: -12.68
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9786,17 +9798,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 250
+      value: 240.25374
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 250
+      value: 240.25374
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 250
+      value: 240.25374
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -10205,7 +10217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &683090666
 Transform:
   m_ObjectHideFlags: 0
@@ -10214,7 +10226,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 683090665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449271966}
@@ -10249,8 +10261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 449271965}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -10826,7 +10838,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.66
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -11353,7 +11365,7 @@ Prefab:
     - target: {fileID: 114531908067335576, guid: bbc182e4479ba4d21ad61ccd1ffc0944,
         type: 2}
       propertyPath: bundleVersion
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114531908067335576, guid: bbc182e4479ba4d21ad61ccd1ffc0944,
         type: 2}
@@ -11460,7 +11472,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 962045564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1265752745}
@@ -11808,7 +11820,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.16
+      value: 2.12
       objectReference: {fileID: 0}
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -11896,7 +11908,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.86
+      value: -6.26
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.y
@@ -12091,17 +12103,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 247.0425
+      value: 125.336105
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 247.0425
+      value: 125.336105
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 247.0425
+      value: 125.336105
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -12453,7 +12465,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 813469346}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1015194416}
@@ -12480,8 +12492,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1015194415}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -12823,7 +12835,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -12833,7 +12845,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -12843,7 +12855,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -12966,11 +12978,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.86
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -13.06
+      value: -12.6
       objectReference: {fileID: 0}
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -13340,7 +13352,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 861121274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 85510053}
@@ -13370,8 +13382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 85510052}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -13385,7 +13397,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 273294396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 544904456}
@@ -13556,7 +13568,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 870420802}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1752882165}
@@ -13586,8 +13598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1752882164}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -13598,6 +13610,79 @@ Transform:
   m_PrefabParentObject: {fileID: 4486977096374550, guid: 407196644830e5947974b08a9af60155,
     type: 2}
   m_PrefabInternal: {fileID: 1729782435}
+--- !u!1 &874231448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 874231449}
+  - component: {fileID: 874231450}
+  m_Layer: 0
+  m_Name: BottomBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874231449
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874231448}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -12.16, z: 11}
+  m_LocalScale: {x: 60, y: 10, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1700259437}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &874231450
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874231448}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 98d27be25477dc5479581812ffa37793, type: 3}
+  m_Color: {r: 0.7529412, g: 0.9098039, b: 0.9254902, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &879215731
 GameObject:
   m_ObjectHideFlags: 0
@@ -13623,7 +13708,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 879215731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 938186279}
@@ -13656,8 +13741,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 938186278}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -14231,17 +14316,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 42
+      value: 144.66246
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 42
+      value: 144.66246
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 42
+      value: 144.66246
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -14534,8 +14619,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1265752744}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -15455,6 +15540,79 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1024142044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1024142045}
+  - component: {fileID: 1024142048}
+  - component: {fileID: 1024142047}
+  m_Layer: 0
+  m_Name: TopBGCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1024142045
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1024142044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 12.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1700259437}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!124 &1024142047
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1024142044}
+  m_Enabled: 1
+--- !u!20 &1024142048
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1024142044}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.8156863, g: 0.95686275, b: 0.96862745, a: 1}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 0
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1001 &1025198395
 Prefab:
   m_ObjectHideFlags: 0
@@ -15505,7 +15663,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 305310400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 916654112}
@@ -15741,7 +15899,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1026776410281114, guid: 438619c9226912c4f9c041c7642d2586,
     type: 2}
-  levelContainer: {fileID: 1426680368}
+  levelTemplatesContainer: {fileID: 1426680368}
+  levelContainer: {fileID: 2115905742}
   respawnTime: 1
   spawnInterval: 1
   spawnStartTime: 0.5
@@ -15832,6 +15991,11 @@ MonoBehaviour:
   - {r: 0.47843137, g: 0.7176471, b: 0.11764706, a: 1}
   - {r: 0.5254902, g: 0.58431375, b: 0.58431375, a: 1}
   - {r: 0.8156863, g: 0.95686275, b: 0.96862745, a: 1}
+  gameWorldBottomBackgroundColors:
+  - {r: 0.7529412, g: 0.9098039, b: 0.9254902, a: 1}
+  - {r: 0.42745098, g: 0.6431373, b: 0.101960786, a: 1}
+  - {r: 0.5254902, g: 0.58431375, b: 0.58431375, a: 1}
+  - {r: 0.7529412, g: 0.9098039, b: 0.9254902, a: 1}
 --- !u!1001 &1033153791
 Prefab:
   m_ObjectHideFlags: 0
@@ -16498,7 +16662,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1073748650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 523860016}
@@ -16528,8 +16692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 523860015}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -16874,7 +17038,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102055487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 228772638}
@@ -16910,8 +17074,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 228772637}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -16999,7 +17163,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115622155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1963899482}
@@ -17038,8 +17202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1963899481}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -17158,7 +17322,7 @@ Prefab:
     - target: {fileID: 61648834651472718, guid: 68d9c17e3fb95cc46adfbff00ca9ac62,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 87.86838
+      value: 143.53091
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68d9c17e3fb95cc46adfbff00ca9ac62, type: 2}
@@ -17589,17 +17753,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 384
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 384
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 384
+      value: 320
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -17630,7 +17794,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1156615983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 182.18707, y: -225, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000025, y: 1.0000025, z: 1.0000025}
   m_Children:
   - {fileID: 982743841}
@@ -17754,7 +17918,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1924190854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 509818859}
@@ -17818,7 +17982,7 @@ Prefab:
     - target: {fileID: 61648834651472718, guid: 68d9c17e3fb95cc46adfbff00ca9ac62,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 143.53082
+      value: 149.17776
       objectReference: {fileID: 0}
     - target: {fileID: 1303126208255494, guid: 68d9c17e3fb95cc46adfbff00ca9ac62, type: 2}
       propertyPath: m_Name
@@ -18102,7 +18266,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1176644999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 907852123}
@@ -18130,8 +18294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 907852122}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -18989,11 +19153,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.97
+      value: 5.51
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -14.07
+      value: -13.69
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.z
@@ -19503,7 +19667,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1289853690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 542.78864, y: 275, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1479660818}
@@ -19830,7 +19994,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -19840,7 +20004,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -19850,7 +20014,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -20059,7 +20223,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4587721505162954, guid: 83e55ff0cee8e4541b6fd39b8c1e3276, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.52
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 4587721505162954, guid: 83e55ff0cee8e4541b6fd39b8c1e3276, type: 2}
       propertyPath: m_LocalPosition.y
@@ -20162,7 +20326,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -20172,7 +20336,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -20182,7 +20346,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -20908,7 +21072,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1402359945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 897359706}
@@ -20935,8 +21099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 897359705}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -21073,7 +21237,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1409563784}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 606.78864, y: 276.19995, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1479660818}
@@ -21109,7 +21273,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1418202357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1493517818}
@@ -21144,8 +21308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1493517817}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -21194,7 +21358,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1426680368}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2136775351}
@@ -21356,8 +21520,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 244581611}
   musicClip: {fileID: 8300000, guid: 3fdfd7a7e14705e41b960c716c2c356e, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -21539,7 +21703,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1454619958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 681057883}
@@ -21565,8 +21729,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 681057882}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -21670,11 +21834,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.19
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -13.2
+      value: -12.7
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.z
@@ -21840,7 +22004,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1475061076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1555312531}
@@ -21871,8 +22035,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1555312530}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -21961,8 +22125,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1479660814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 766, y: 363.5, z: 0}
-  m_LocalScale: {x: 1.2116667, y: 1.2116667, z: 1.2116667}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 111983894}
   - {fileID: 79318423}
@@ -22189,7 +22353,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1481405393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 702328743}
@@ -22219,8 +22383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 702328742}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -22600,7 +22764,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1496370851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.70000076, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 79318423}
@@ -23052,7 +23216,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 587.1376
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -23062,7 +23226,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 587.1376
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -23072,7 +23236,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 587.1376
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -23270,7 +23434,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1551556121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000015258789, y: -67, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 546633421}
@@ -23379,7 +23543,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1556660241}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1849257610}
@@ -23405,8 +23569,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1849257609}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -23422,7 +23586,7 @@ GameObject:
   - component: {fileID: 1557802686}
   - component: {fileID: 1557802687}
   m_Layer: 0
-  m_Name: GameArea
+  m_Name: GameBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23435,11 +23599,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1557802685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -4.35, z: 11}
+  m_LocalPosition: {x: 0, y: -4.35, z: 11}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1700259437}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1557802687
 SpriteRenderer:
@@ -23610,7 +23774,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565527834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -219.24635, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 546633421}
@@ -23936,7 +24100,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592676433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1481875174}
@@ -23966,8 +24130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1481875173}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -24119,7 +24283,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603372537}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 574.7808, y: 276.19995, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1479660818}
@@ -24487,11 +24651,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.55
+      value: -6.52
       objectReference: {fileID: 0}
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12.25
+      value: -12.82
       objectReference: {fileID: 0}
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24607,7 +24771,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1628825001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.101959, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1930522230}
@@ -24969,7 +25133,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -24979,7 +25143,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -24989,7 +25153,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 150
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -25289,7 +25453,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1740439627733658, guid: 407196644830e5947974b08a9af60155, type: 2}
       propertyPath: m_Layer
@@ -25298,12 +25462,12 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -25513,6 +25677,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -25527,7 +25692,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1024142045}
   - {fileID: 1557802686}
+  - {fileID: 874231449}
   m_Father: {fileID: 1010290019}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25542,6 +25709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4902eac0e17fc47a53fe972bdef934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topBackgroundCamera: {fileID: 1024142048}
+  bottomBackgroundSprite: {fileID: 874231450}
 --- !u!1 &1701104382
 GameObject:
   m_ObjectHideFlags: 0
@@ -25567,7 +25736,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1701104382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 552897775}
@@ -25602,8 +25771,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 552897774}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -25756,7 +25925,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 120
+      value: 166.24844
       objectReference: {fileID: 0}
     - target: {fileID: 1740439627733658, guid: 407196644830e5947974b08a9af60155, type: 2}
       propertyPath: m_Layer
@@ -25781,12 +25950,12 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 120
+      value: 166.24844
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 120
+      value: 166.24844
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -25816,7 +25985,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1711618364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1038594483}
@@ -25843,8 +26012,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1038594482}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -26313,17 +26482,17 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 192
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 192
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 192
+      value: 210
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -26380,11 +26549,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.23
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -11.41
+      value: -11.56
       objectReference: {fileID: 0}
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -26513,7 +26682,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1747267901}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 199, y: 75, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1182353765}
@@ -27053,11 +27222,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.62
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -11.05
+      value: -11.7
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.z
@@ -27460,7 +27629,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1814968844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1418241132}
@@ -27487,8 +27656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1418241131}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -27519,7 +27688,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1815182440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1151255865}
@@ -27556,8 +27725,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1151255864}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -27681,7 +27850,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -27691,7 +27860,7 @@ Prefab:
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -27701,7 +27870,7 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
@@ -28017,7 +28186,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4587721505162954, guid: 83e55ff0cee8e4541b6fd39b8c1e3276, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.48
+      value: 2.22
       objectReference: {fileID: 0}
     - target: {fileID: 4587721505162954, guid: 83e55ff0cee8e4541b6fd39b8c1e3276, type: 2}
       propertyPath: m_LocalPosition.y
@@ -28025,7 +28194,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4587721505162954, guid: 83e55ff0cee8e4541b6fd39b8c1e3276, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4587721505162954, guid: 83e55ff0cee8e4541b6fd39b8c1e3276, type: 2}
       propertyPath: m_LocalRotation.x
@@ -28366,7 +28535,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862926104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 83132915}
@@ -28394,8 +28563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 83132914}
   musicClip: {fileID: 8300000, guid: dbe5572f5abf9444e8664de258c8bd1b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -28430,11 +28599,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.76
+      value: 3.94
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12.92
+      value: -13.95
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.z
@@ -28812,7 +28981,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1898847602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1303943835}
@@ -28839,8 +29008,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1303943834}
   musicClip: {fileID: 8300000, guid: 94b65f0794dd59643954ed3674a87c52, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -29012,7 +29181,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1911838692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 510.78864, y: 276.19995, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1479660818}
@@ -29261,7 +29430,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.7
+      value: -6.37
       objectReference: {fileID: 0}
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -29389,8 +29558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 509818858}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 5
-  maxDecors: 10
+  minDecors: 8
+  maxDecors: 16
   levelBounds:
     m_Center: {x: 0, y: 2.5, z: 0}
     m_Extent: {x: 17.5, y: 7.5, z: 0}
@@ -29537,7 +29706,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1930522229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 307.18713, y: -225, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 422377012}
@@ -29657,11 +29826,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.13
+      value: -6.64
       objectReference: {fileID: 0}
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12.24
+      value: -13.38
       objectReference: {fileID: 0}
     - target: {fileID: 4839509132536088, guid: f2d651c8b4a684a489c3c37fd996c8b7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -29893,11 +30062,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.81999993
+      value: 4.52
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12.54
+      value: -11.51
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.z
@@ -30176,7 +30345,7 @@ Prefab:
     - target: {fileID: 61088646650504702, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 420
+      value: 195.92255
       objectReference: {fileID: 0}
     - target: {fileID: 4486977096374550, guid: 407196644830e5947974b08a9af60155, type: 2}
       propertyPath: m_LocalScale.y
@@ -30185,12 +30354,12 @@ Prefab:
     - target: {fileID: 60765000046000722, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 420
+      value: 195.92255
       objectReference: {fileID: 0}
     - target: {fileID: 60657908488466664, guid: 407196644830e5947974b08a9af60155,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 420
+      value: 195.92255
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407196644830e5947974b08a9af60155, type: 2}
@@ -30336,7 +30505,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952837800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.101959, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1156615984}
@@ -30407,7 +30576,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1441332627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 244581612}
@@ -30499,7 +30668,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.45
+      value: -6.38
       objectReference: {fileID: 0}
     - target: {fileID: 4678526462777710, guid: b44efea9c63a9a942af563876ce7f038, type: 2}
       propertyPath: m_LocalPosition.y
@@ -30900,7 +31069,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013828647}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3199987, y: 2.9700003, z: 0}
+  m_LocalPosition: {x: -5.3199987, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 493471659}
@@ -30927,8 +31096,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 493471658}
   musicClip: {fileID: 8300000, guid: 996072224966b4248a82347daf7a891b, type: 3}
-  minDecors: 10
-  maxDecors: 20
+  minDecors: 15
+  maxDecors: 25
   levelBounds:
     m_Center: {x: 9.5, y: 2.5, z: 0}
     m_Extent: {x: 27, y: 7.5, z: 0}
@@ -31073,7 +31242,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2037654736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -163, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 546633421}
@@ -31388,7 +31557,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2067434552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.101959, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 111983894}
@@ -31537,11 +31706,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.04
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -11.14
+      value: -11.67
       objectReference: {fileID: 0}
     - target: {fileID: 4782880862705716, guid: 21c6213948190eb47804e3d2ded823ad, type: 2}
       propertyPath: m_LocalPosition.z
@@ -31978,6 +32147,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e80d3d60efea1ca42b0c44c2e28449d9, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2115905742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2115905743}
+  m_Layer: 0
+  m_Name: LevelContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2115905743
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115905742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2117099384 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8,
@@ -32146,7 +32343,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.7
+      value: -6.64
       objectReference: {fileID: 0}
     - target: {fileID: 4515800130188810, guid: 5005a6d9015a8604ca1037ab56318da8, type: 2}
       propertyPath: m_LocalPosition.y

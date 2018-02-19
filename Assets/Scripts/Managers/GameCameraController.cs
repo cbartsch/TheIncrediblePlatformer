@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GameCameraController : MonoBehaviour
 {
+    public static GameCameraController Instance { get; private set; }
+
     //height of screen in game units
     //cameras are configured to display this height of the world
     public const float SCREEN_HEIGHT = 10;
@@ -15,24 +17,34 @@ public class GameCameraController : MonoBehaviour
         get { return (float) Screen.width / Screen.height * GameCameraController.SCREEN_HEIGHT; }
     }
 
+    public Camera topBackgroundCamera;
+    public SpriteRenderer bottomBackgroundSprite;
+
     private new Camera camera;
 
     private Vector3 lastDragPos;
 
+    private float startHeight, startSize;
+
     void Start()
     {
+        Instance = this;
         camera = GetComponent<Camera>();
+        startHeight = camera.rect.height;
+        startSize = camera.orthographicSize;
     }
 
     void Update()
     {
+        adjustViewports();
+
         //move camera to follow player(s)
 
         var level = GameManager.Instance.level;
 
         if (!level) { return; }
 
-        var bounds = level.levelBounds;
+        var bounds = level.ScaledBounds;
 
         Vector3 cameraPos = camera.transform.position;
         bool interpolate;
@@ -69,6 +81,25 @@ public class GameCameraController : MonoBehaviour
         var newPos = computeNewPos(bounds, range, cameraPos);
 
         applyPosition(newPos, interpolate);
+    }
+
+    private void adjustViewports()
+    {
+        //levels are designed at 16:9 ratio
+        //- at wider ratios, there is more space on the screen to the left and right, which is 
+        //- at narrower ratios, there would be less space on left and right and thus scrolling needed
+        //  -> scale camera height down (providing more width) so the 16:9 design fits on screen completely
+        var aspectRatio = (float) Screen.width / Screen.height;
+        var REFERENCE_RATIO = 16.0f / 9.0f;
+        var scale = Math.Min(1, aspectRatio / REFERENCE_RATIO);
+        var cameraHeight = startHeight * scale;
+        var bgHeight = startHeight - cameraHeight;
+        
+        camera.rect = new Rect(0, 1 - startHeight, 1, cameraHeight);
+        
+        topBackgroundCamera.rect = new Rect(0, 1 - bgHeight, 1, bgHeight);
+        topBackgroundCamera.orthographicSize = startSize * bgHeight / cameraHeight;
+        topBackgroundCamera.transform.localPosition = new Vector3(0, camera.orthographicSize + topBackgroundCamera.orthographicSize);
     }
 
     private static Vector3 computePlayerPos(Player[] players)
