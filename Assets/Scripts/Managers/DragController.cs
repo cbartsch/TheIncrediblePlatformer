@@ -61,7 +61,7 @@ public class DragController : MonoBehaviour
     
     void Update()
     {
-        bool dragEnabled = Utils.FindCameraAtWorldPos(transform.position) != Camera.main ||
+		bool dragEnabled = Utils.FindCameraAtWorldPos(transform.position).tag == "ToolCamera" ||
                            GameManager.Instance.Paused || Dragging;
         crosshair.SetActive(dragEnabled);
         if (!dragEnabled)
