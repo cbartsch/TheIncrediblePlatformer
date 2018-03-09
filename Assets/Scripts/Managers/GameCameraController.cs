@@ -100,6 +100,7 @@ public class GameCameraController : MonoBehaviour
         topBackgroundCamera.rect = new Rect(0, 1 - bgHeight, 1, bgHeight);
         topBackgroundCamera.orthographicSize = startSize * bgHeight / cameraHeight;
         topBackgroundCamera.transform.localPosition = new Vector3(0, camera.orthographicSize + topBackgroundCamera.orthographicSize);
+        topBackgroundCamera.gameObject.SetActive(topBackgroundCamera.orthographicSize > 0.1);
     }
 
     private static Vector3 computePlayerPos(Player[] players)
