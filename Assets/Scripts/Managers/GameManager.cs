@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     public int WorldIndex { get { return worldIndex; } }
     public int LevelIndex { get { return levelIndex; } }
 
-    private int NumWorlds { get { return levelTemplatesContainer.transform.childCount; } }
-    private int NumLevelsInWorld { get { return GetNumLevelsInWorld(this.worldIndex); } }
+    public int NumWorlds { get { return levelTemplatesContainer.transform.childCount; } }
+    public int NumLevelsInWorld { get { return GetNumLevelsInWorld(this.worldIndex); } }
 
     public int GetNumLevelsInWorld(int index)
     {
