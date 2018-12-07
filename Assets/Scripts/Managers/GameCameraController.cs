@@ -46,27 +46,20 @@ public class GameCameraController : MonoBehaviour
 
         var bounds = level.ScaledBounds;
 
-        Vector3 cameraPos = camera.transform.position;
+        Vector3 cameraPos;
         bool interpolate;
         if (!DragController.DragActive && InputManager.HasTouch)
         {
-            var pos = InputManager.TouchPosScreen;
-            if (InputManager.HasTouchDown)
-            {
-                lastDragPos = pos;
-            }
-            if (InputManager.HasTouch)
-            {
-                var diff = lastDragPos - pos;
-                cameraPos += Utils.ScaleScreenToWorld(diff);
-                lastDragPos = pos;
-            }
+            //move camera with mouse/touch drag
+            cameraPos = computeDragPos();
 
             //don't interpolate dragging
             interpolate = false;
         }
         else
         { 
+            //move camera to center players
+
             //find all players
             var players = level.GetComponentsInChildren<Player>();
 
@@ -81,6 +74,26 @@ public class GameCameraController : MonoBehaviour
         var newPos = computeNewPos(bounds, range, cameraPos);
 
         applyPosition(newPos, interpolate);
+    }
+
+    private Vector3 computeDragPos()
+    {
+        var touchPos = InputManager.TouchPosScreen;
+        if (InputManager.HasTouchDown)
+        {
+            lastDragPos = touchPos;
+        }
+
+        var cameraPos = camera.transform.position;
+
+        if (InputManager.HasTouch)
+        {
+            var diff = lastDragPos - touchPos;
+            cameraPos += Utils.ScaleScreenToWorld(diff);
+            lastDragPos = touchPos;
+        }
+
+        return cameraPos;
     }
 
     private void adjustViewports()
@@ -105,7 +118,7 @@ public class GameCameraController : MonoBehaviour
 
     private static Vector3 computePlayerPos(Player[] players)
     {
-        //find average of all players' positions (sum / length)
+        //find average (= center) of all players' positions (sum / length)
         var positions = players.Select(p => p.transform.position);
         return positions.Aggregate((a, b) => a + b) / players.Length;
     }
