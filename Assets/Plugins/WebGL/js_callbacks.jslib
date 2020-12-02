@@ -3,7 +3,7 @@ var kongregate;
 mergeInto(LibraryManager.library, {
   
   JS_Init: function() {
-    if(kongregateAPI) {
+    if(typeof kongregateAPI !== "undefined") {
       console.log("loading kongregate API");
       kongregateAPI.loadAPI(function() {
         console.log("loaded kongregate API");
