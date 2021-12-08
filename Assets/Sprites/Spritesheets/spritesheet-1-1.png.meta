@@ -633,7 +633,7 @@ TextureImporter:
       213: 21300418
     second: spritesheet-1-1_209
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -653,6 +653,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -662,8 +664,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -684,9 +686,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -5159,6 +5165,217 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      spritesheet-1-1_158: 21300316
+      spritesheet-1-1_48: 21300096
+      spritesheet-1-1_77: 21300154
+      spritesheet-1-1_128: 21300256
+      spritesheet-1-1_66: 21300132
+      spritesheet-1-1_182: 21300364
+      spritesheet-1-1_161: 21300322
+      spritesheet-1-1_96: 21300192
+      spritesheet-1-1_98: 21300196
+      spritesheet-1-1_15: 21300030
+      spritesheet-1-1_170: 21300340
+      spritesheet-1-1_2: 21300004
+      spritesheet-1-1_18: 21300036
+      spritesheet-1-1_176: 21300352
+      spritesheet-1-1_39: 21300078
+      spritesheet-1-1_85: 21300170
+      spritesheet-1-1_84: 21300168
+      spritesheet-1-1_54: 21300108
+      spritesheet-1-1_65: 21300130
+      spritesheet-1-1_61: 21300122
+      spritesheet-1-1_59: 21300118
+      spritesheet-1-1_33: 21300066
+      spritesheet-1-1_135: 21300270
+      spritesheet-1-1_143: 21300286
+      spritesheet-1-1_53: 21300106
+      spritesheet-1-1_79: 21300158
+      spritesheet-1-1_50: 21300100
+      spritesheet-1-1_68: 21300136
+      spritesheet-1-1_122: 21300244
+      spritesheet-1-1_130: 21300260
+      spritesheet-1-1_198: 21300396
+      spritesheet-1-1_169: 21300338
+      spritesheet-1-1_16: 21300032
+      spritesheet-1-1_86: 21300172
+      spritesheet-1-1_90: 21300180
+      spritesheet-1-1_138: 21300276
+      spritesheet-1-1_200: 21300400
+      spritesheet-1-1_27: 21300054
+      spritesheet-1-1_126: 21300252
+      spritesheet-1-1_104: 21300208
+      spritesheet-1-1_36: 21300072
+      spritesheet-1-1_183: 21300366
+      spritesheet-1-1_165: 21300330
+      spritesheet-1-1_159: 21300318
+      spritesheet-1-1_42: 21300084
+      spritesheet-1-1_35: 21300070
+      spritesheet-1-1_115: 21300230
+      spritesheet-1-1_125: 21300250
+      spritesheet-1-1_9: 21300018
+      spritesheet-1-1_179: 21300358
+      spritesheet-1-1_74: 21300148
+      spritesheet-1-1_190: 21300380
+      spritesheet-1-1_22: 21300044
+      spritesheet-1-1_3: 21300006
+      spritesheet-1-1_142: 21300284
+      spritesheet-1-1_167: 21300334
+      spritesheet-1-1_199: 21300398
+      spritesheet-1-1_177: 21300354
+      spritesheet-1-1_178: 21300356
+      spritesheet-1-1_94: 21300188
+      spritesheet-1-1_92: 21300184
+      spritesheet-1-1_118: 21300236
+      spritesheet-1-1_123: 21300246
+      spritesheet-1-1_114: 21300228
+      spritesheet-1-1_116: 21300232
+      spritesheet-1-1_195: 21300390
+      spritesheet-1-1_64: 21300128
+      spritesheet-1-1_60: 21300120
+      spritesheet-1-1_113: 21300226
+      spritesheet-1-1_124: 21300248
+      spritesheet-1-1_193: 21300386
+      spritesheet-1-1_58: 21300116
+      spritesheet-1-1_38: 21300076
+      spritesheet-1-1_26: 21300052
+      spritesheet-1-1_151: 21300302
+      spritesheet-1-1_188: 21300376
+      spritesheet-1-1_21: 21300042
+      spritesheet-1-1_150: 21300300
+      spritesheet-1-1_162: 21300324
+      spritesheet-1-1_196: 21300392
+      spritesheet-1-1_131: 21300262
+      spritesheet-1-1_108: 21300216
+      spritesheet-1-1_101: 21300202
+      spritesheet-1-1_32: 21300064
+      spritesheet-1-1_44: 21300088
+      spritesheet-1-1_133: 21300266
+      spritesheet-1-1_87: 21300174
+      spritesheet-1-1_40: 21300080
+      spritesheet-1-1_62: 21300124
+      spritesheet-1-1_171: 21300342
+      spritesheet-1-1_6: 21300012
+      spritesheet-1-1_197: 21300394
+      spritesheet-1-1_102: 21300204
+      spritesheet-1-1_173: 21300346
+      spritesheet-1-1_140: 21300280
+      spritesheet-1-1_52: 21300104
+      spritesheet-1-1_156: 21300312
+      spritesheet-1-1_163: 21300326
+      spritesheet-1-1_63: 21300126
+      spritesheet-1-1_17: 21300034
+      spritesheet-1-1_23: 21300046
+      spritesheet-1-1_28: 21300056
+      spritesheet-1-1_120: 21300240
+      spritesheet-1-1_187: 21300374
+      spritesheet-1-1_144: 21300288
+      spritesheet-1-1_20: 21300040
+      spritesheet-1-1_152: 21300304
+      spritesheet-1-1_88: 21300176
+      spritesheet-1-1_164: 21300328
+      spritesheet-1-1_201: 21300402
+      spritesheet-1-1_31: 21300062
+      spritesheet-1-1_89: 21300178
+      spritesheet-1-1_91: 21300182
+      spritesheet-1-1_69: 21300138
+      spritesheet-1-1_75: 21300150
+      spritesheet-1-1_111: 21300222
+      spritesheet-1-1_189: 21300378
+      spritesheet-1-1_19: 21300038
+      spritesheet-1-1_34: 21300068
+      spritesheet-1-1_194: 21300388
+      spritesheet-1-1_80: 21300160
+      spritesheet-1-1_105: 21300210
+      spritesheet-1-1_13: 21300026
+      spritesheet-1-1_175: 21300350
+      spritesheet-1-1_45: 21300090
+      spritesheet-1-1_83: 21300166
+      spritesheet-1-1_155: 21300310
+      spritesheet-1-1_81: 21300162
+      spritesheet-1-1_149: 21300298
+      spritesheet-1-1_117: 21300234
+      spritesheet-1-1_97: 21300194
+      spritesheet-1-1_103: 21300206
+      spritesheet-1-1_24: 21300048
+      spritesheet-1-1_25: 21300050
+      spritesheet-1-1_129: 21300258
+      spritesheet-1-1_141: 21300282
+      spritesheet-1-1_46: 21300092
+      spritesheet-1-1_70: 21300140
+      spritesheet-1-1_5: 21300010
+      spritesheet-1-1_76: 21300152
+      spritesheet-1-1_51: 21300102
+      spritesheet-1-1_160: 21300320
+      spritesheet-1-1_119: 21300238
+      spritesheet-1-1_14: 21300028
+      spritesheet-1-1_12: 21300024
+      spritesheet-1-1_49: 21300098
+      spritesheet-1-1_127: 21300254
+      spritesheet-1-1_172: 21300344
+      spritesheet-1-1_78: 21300156
+      spritesheet-1-1_206: 21300412
+      spritesheet-1-1_47: 21300094
+      spritesheet-1-1_73: 21300146
+      spritesheet-1-1_145: 21300290
+      spritesheet-1-1_10: 21300020
+      spritesheet-1-1_41: 21300082
+      spritesheet-1-1_139: 21300278
+      spritesheet-1-1_168: 21300336
+      spritesheet-1-1_134: 21300268
+      spritesheet-1-1_181: 21300362
+      spritesheet-1-1_132: 21300264
+      spritesheet-1-1_202: 21300404
+      spritesheet-1-1_154: 21300308
+      spritesheet-1-1_207: 21300414
+      spritesheet-1-1_7: 21300014
+      spritesheet-1-1_153: 21300306
+      spritesheet-1-1_112: 21300224
+      spritesheet-1-1_203: 21300406
+      spritesheet-1-1_72: 21300144
+      spritesheet-1-1_95: 21300190
+      spritesheet-1-1_137: 21300274
+      spritesheet-1-1_157: 21300314
+      spritesheet-1-1_148: 21300296
+      spritesheet-1-1_67: 21300134
+      spritesheet-1-1_186: 21300372
+      spritesheet-1-1_93: 21300186
+      spritesheet-1-1_30: 21300060
+      spritesheet-1-1_185: 21300370
+      spritesheet-1-1_107: 21300214
+      spritesheet-1-1_11: 21300022
+      spritesheet-1-1_29: 21300058
+      spritesheet-1-1_99: 21300198
+      spritesheet-1-1_208: 21300416
+      spritesheet-1-1_100: 21300200
+      spritesheet-1-1_121: 21300242
+      spritesheet-1-1_1: 21300002
+      spritesheet-1-1_4: 21300008
+      spritesheet-1-1_57: 21300114
+      spritesheet-1-1_180: 21300360
+      spritesheet-1-1_204: 21300408
+      spritesheet-1-1_37: 21300074
+      spritesheet-1-1_8: 21300016
+      spritesheet-1-1_205: 21300410
+      spritesheet-1-1_82: 21300164
+      spritesheet-1-1_136: 21300272
+      spritesheet-1-1_209: 21300418
+      spritesheet-1-1_109: 21300218
+      spritesheet-1-1_184: 21300368
+      spritesheet-1-1_0: 21300000
+      spritesheet-1-1_43: 21300086
+      spritesheet-1-1_56: 21300112
+      spritesheet-1-1_191: 21300382
+      spritesheet-1-1_55: 21300110
+      spritesheet-1-1_147: 21300294
+      spritesheet-1-1_106: 21300212
+      spritesheet-1-1_110: 21300220
+      spritesheet-1-1_166: 21300332
+      spritesheet-1-1_146: 21300292
+      spritesheet-1-1_192: 21300384
+      spritesheet-1-1_71: 21300142
+      spritesheet-1-1_174: 21300348
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

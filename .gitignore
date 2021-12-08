@@ -1,9 +1,11 @@
 /Library
 /Temp
 /UnityPackageManager
+/Logs
 /bin
 /obj
 /.vs
+/.idea
 
 *.csproj
 *.sln
